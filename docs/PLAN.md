@@ -130,3 +130,13 @@ Implemented as a **design candidate, not commercial SKU activation**:
 ### Release and collaboration gate
 
 A branch preview can be shared with the product owner for review only after CI succeeds. **No merge or production deployment** until the independent design/quality reviewer accepts current evidence, the owner approves, and documentation distinguishes incomplete commercial/religious content. Real live submissions require a separate explicit legal/security/data-operations authorization.
+
+## 10. HUB-09 — Secure operator moderation (new stacked candidate)
+
+- **Admission:** HUB-08's suggestion storage requires a staff review mechanism before public intake can responsibly open. The previous static-GitHub operator mode could not triage the D1 queue without database tools.
+- **Included now:** read-only bounded/paginated review queue by pending/reviewed/rejected; operator responsive UI with explicit confirmation; review note and double submit protection; verified Cloudflare Access JWT + email allowlist + same-origin POST; D1 status transition + audit log migration; no public publishing. All new code is independent of Cloudflare provisioned identity until explicitly enabled.
+- **Operating model:** public anonymous directory and event guides; separately activated visitor suggestion intake; limited editor role for queue triage; independent human-only GitHub publication. Three authorities are never collapsed into one button.
+- **Verification:** new native negative-auth/transition tests; multi-viewport operator browser mock; original catalogue and hub regressions. Cloudflare preview + Access/D1 live tests outstanding.
+- **Not included:** user account management, claims verification/certification, staff invitations, auto-publication, supplier/order operations, activated signup, live domain, third-party email sending.
+- **Next package after acceptance:** certified supplier and venue provenance register + editor workflows, source-freshness reviews, scheduled content audit, privacy/legal implementation, and Cloudflare deployment acceptance. Commence paid commerce only after supply and fulfilment evidence.
+- **Release boundaries:** do not merge upstream PR #1/#2 or this stacked PR without human approval; do not enable `HUB_OPERATOR_ACTIVE` or `HUB_SUBMISSIONS_ACTIVE` without a real environment and the runbook gates in `docs/OPERATOR_REVIEW_RUNBOOK.md`.
