@@ -63,7 +63,7 @@ with sync_playwright() as playwright:
                 assert not page.locator('#hub-recipe-dialog').is_visible()
             if path=='/events/':
                 assert page.locator('.events-empty').count()==1
-                assert page.locator('#hub-suggest-submit').is_disabled()
+                assert page.locator('a[href="/contribute/?intent=event"]').count() >= 1
         page.set_content(page_markup('/'),wait_until='load')
         page.evaluate('window.scrollTo(0,0)')
         page.wait_for_timeout(250)

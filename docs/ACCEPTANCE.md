@@ -94,3 +94,10 @@ Internal `accepted` is never a halal accreditation, even while a certificate is 
 | RELEASE | Owner approves the exact-head PR stack and the separate public content PR; accepted editorial entries are not automatically published or verified | NOT AUTHORIZED |
 
 No status of an internal proposal is proof that a company, mosque, product or religious event has been independently verified. Public content must have a separate source-controlled review and release.
+
+## COMM-01 — Jamaica-first stewardship journeys
+
+- **FAST:** deterministic build of 15 detail pages, escaped source data, correct non-verified status, stable public IDs, one contribution form with four intent choices, no indexable claim/certification, preserved fail-closed backend and no new sensitive-data collection.
+- **STANDARD:** Chromium 1440/768/390/320 journeys for directory → place → contextual correction, source prefill, choice switching, no overflow or JS errors; API disabled state, mocked verified challenge, validation error, rejected request and successful **pending** submission. Existing catalogue/hub/ingredient/operator/trust/editorial browser regressions must pass.
+- **FULL / external:** subject-matter verification of religious terminology and source authority, moderated usability tests with Jamaican Muslim residents and learners, real WCAG keyboard and assistive-technology review, privacy/legal basis and abuse review, exact-head Cloudflare preview when Hermes starts final deployment.
+- **RELEASE:** no public directory edits without independently checked source and human publication PR; no claim of identity, approval or certification through an anonymous suggestion. Public submissions and production remain closed until explicit approval and real infrastructure acceptance.
