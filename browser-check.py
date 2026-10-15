@@ -81,7 +81,7 @@ with sync_playwright() as pw:
         if label=='mobile':
             page.get_by_role('button',name='Open menu').click()
             assert page.locator('#mobile-nav').is_visible()
-            page.get_by_role('link',name='Halal Living',exact=True).last.click()
+            page.get_by_role('link',name='Learn',exact=True).last.click()
             assert not page.locator('#mobile-nav').is_visible()
             print('mobile menu PASS')
         page.close()

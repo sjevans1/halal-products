@@ -243,6 +243,36 @@
       action: () => { searchDialog.close(); location.hash = '#our-way'; }
     },
     {
+      title: 'Find Halal in Jamaica',
+      type: 'DIRECTORY',
+      keywords: 'mosque parish Kingston Montego Bay organization certification source map',
+      action: () => { searchDialog.close(); location.href = '/discover/'; }
+    },
+    {
+      title: 'Community resources',
+      type: 'COMMUNITY',
+      keywords: 'mosques jamaica groups visit',
+      action: () => { searchDialog.close(); location.href = '/community/'; }
+    },
+    {
+      title: 'Halal learning guides',
+      type: 'GUIDES',
+      keywords: 'halal tayyib labels ingredients beginners',
+      action: () => { searchDialog.close(); location.href = '/learn/'; }
+    },
+    {
+      title: 'Community events',
+      type: 'EVENTS',
+      keywords: 'Ramadan Eid gatherings local calendar',
+      action: () => { searchDialog.close(); location.href = '/events/'; }
+    },
+    {
+      title: 'Tayyib Kitchen meal planner',
+      type: 'KITCHEN',
+      keywords: 'shopping list recipes portions servings',
+      action: () => { searchDialog.close(); location.href = '/kitchen/'; }
+    },
+    {
       title: 'Launch updates',
       type: 'JOIN',
       keywords: 'email register early access',

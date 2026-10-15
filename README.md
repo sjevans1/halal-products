@@ -65,3 +65,23 @@ Generated product imagery is **illustrative**, including fictional details rende
 ### Verification workflow
 
 `npm run check` regenerates the catalogue pages and validates data, routes, imagery, source boundaries and signup failure modes. `python browser-check.py` exercises Chromium rendering and interactions in a contained local harness (not a real Cloudflare production test) and generates review screenshots at four breakpoints. Approve candidate artwork and page experience independently before merge; Cloudflare deployment, genuine user signup and food sales are all separate release gates.
+
+## Community Hub expansion (stacked candidate)
+
+The product website also includes a source-aware halal lifestyle and community resource hub. This package is layered on top of the original catalogue candidate, and is intended to be reviewed in a **separate stacked pull request**.
+
+Public routes: `/discover/` (15 source-referenced mosque/community entries with searchable parish/category filters), `/community/`, `/learn/` (4 sourced guides), `/kitchen/` (3 illustrated interactive recipes and shopping list), `/events/` (approved-only event calendar / Ramadan resources), `/partners/` (future partnerships with certification-integrity boundaries).
+
+- Edit `hub/hub.json` for public resource, guide, recipe and event data. `npm run build` runs both the original catalogue generator and `scripts/build-hub.mjs`. **Do not hand-edit generated hub pages or `public/hub-data.js`.**
+- Record every directory source and last-checked date. The seeded mosque entries are *source-listed*, **not verified by Tayyib**; locations, service times and contacts may be stale. The directory currently has **no approved certified food businesses**. No event appears without an approved organizer source.
+- The moderated suggestions form is **disabled by default** and requires `HUB_SUBMISSIONS_ACTIVE=true`, `WAITLIST_DB` D1 binding, `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET`. Apply `migrations/0002_hub_suggestions.sql` before enabling. No visitor account or provider admin interface is implied.
+- Review proposed entries through the source-controlled content workflow; D1 pending submissions are not promoted automatically. Example pending queue inspection by an *authorized operator* only:
+
+```bash
+npx wrangler d1 execute tayyib-waitlist --remote --command="SELECT id,kind,title,source_url,created_at FROM hub_suggestions WHERE review_status='pending' ORDER BY created_at ASC LIMIT 50"
+```
+
+  Do not expose this query through public Pages Functions. Review source authenticity, rights, freshness and necessary permissions, submit an approved JSON change for independent review, then disposition the D1 queue according to the approved retention policy. **Do not enable collection until an accountable privacy/controller/operator has approved retention, rate controls and corrections/removals.**
+
+- Test local behavior with `npm run check` and, where Chromium/Playwright are available, `python browser-hub-check.py`. This is simulated Pages behavior; actual live Cloudflare preview and D1/Turnstile integration remain release gates.
+- See `docs/PLAN.md` section 9 and ADR-003 for future waves: independently verified food business records, content moderation UI, community event partnerships, supplier inventory, JMD checkout and wholesale services. Do not treat planned work as already operational.
