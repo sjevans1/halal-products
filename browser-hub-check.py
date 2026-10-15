@@ -49,6 +49,8 @@ with sync_playwright() as playwright:
                 page.locator('#directory-kind').select_option('organization')
                 assert page.locator('.directory-card').count()==2
                 page.locator('#directory-kind').select_option('all')
+                page.evaluate('''() => {window.TAYYIB_HUB.listings[0].sourceCheckedAt = '2020-01-01';document.querySelector('#directory-query').dispatchEvent(new Event('input',{bubbles:true}));}''')
+                assert page.locator('.source-warning').count()>=1, 'Old references need an honest warning'
             if path=='/kitchen/':
                 assert page.locator('.hub-recipe').count()==3
                 page.locator('[data-recipe-open="curry"]').click()

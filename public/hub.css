@@ -10,3 +10,5 @@
 @media(max-width:700px){.home-hub-grid{grid-template-columns:1fr}.home-hub-card{min-height:280px}}
 
 .ingredient-hub-feature{margin:34px 0 38px;border:1px solid #c9bd9e;padding:35px 40px;background:linear-gradient(110deg,#f6f3e9,#e7ece0)}.ingredient-hub-feature span{color:#9d824d;font-size:9px;font-weight:800;letter-spacing:2px}.ingredient-hub-feature h3{font:normal 31px Georgia,serif;color:#214631;margin:13px 0}.ingredient-hub-feature p{color:#596e60;font-size:13px;line-height:1.8;max-width:660px}.ingredient-hub-feature a{font-weight:750;font-size:12px;color:#235642}@media(max-width:680px){.ingredient-hub-feature{padding:27px 23px}.ingredient-hub-feature h3{font-size:27px}}
+
+.directory-tag.source-warning{background:#fff0d8;color:#814d25;border-color:#dec39b}.directory-card footer{flex-wrap:wrap}.directory-card .directory-meta{flex-wrap:wrap}

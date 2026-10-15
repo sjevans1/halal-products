@@ -20,7 +20,7 @@ for (const l of hub.listings){
  assert(validUrl(l.sourceUrl)&&/^\d{4}-\d{2}-\d{2}$/.test(l.sourceCheckedAt),'source and review date mandatory '+l.id);
  assert(l.name&&l.summary&&l.sourceLabel,'missing listing copy '+l.id);
  assert(!(l.halalStatus==='certified'&&!l.certification),'cannot call entry certified without evidence '+l.id);
- if(l.certification) {assert(l.certification.certifier&&l.certification.scope&&l.certification.expiresAt&&validUrl(l.certification.evidenceUrl),'complete certificate evidence required '+l.id);assert(l.certification.expiresAt>=hub.edition,'expired certificate '+l.id)}
+ if(l.certification) {assert(l.certification.certifier&&l.certification.scope&&l.certification.expiresAt&&validUrl(l.certification.evidenceUrl),'complete certificate evidence required '+l.id);assert(l.certification.expiresAt>=new Date().toISOString().slice(0,10),'expired certificate '+l.id)}
  assert(l.prayerTimesConfirmed!==true&&l.openingHoursConfirmed!==true,'unverified operating hours in seed data '+l.id);
 }
 for (const g of hub.guides){assert(/^[a-z0-9-]+$/.test(g.id)&&!guides.has(g.id),'guide id invalid');guides.add(g.id);assert(g.title&&g.sections?.length&&g.sources?.every(s=>validUrl(s.url)),'guide needs sources '+g.id)}

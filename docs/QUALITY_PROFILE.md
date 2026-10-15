@@ -56,3 +56,11 @@ Risks: (R1) visual packaging could be mistaken for certified products → concep
 - **Accessibility:** search with counts, native details, keyboard-use filters and checkboxes, responsive at 320px onward, copy feedback with an explicit unavailable fallback. External screen-reader and contrast assessment still needed.
 - **Privacy:** no photo upload, account, history, analytics or retained input. All guide content is static; checklist state is ephemeral.
 - **Evidence:** references Jamaica Halal Council's published general guidance, without claiming its endorsement or actual product assessment.
+
+
+## FRESH-01 public information safety
+
+- **Timeliness:** source viewing is not independent verification. No current opening, prayer time or halal status inferred. >90/>180 day age warnings are editorial reminders, not closure claims.
+- **Release blocker:** future/invalid dates, unapproved events, missing certifier scope and expired certificate claims. Date-only audits do not make claims reliable; human follow-up required.
+- **Privacy:** all checks are local and use only public metadata, no user profiles, requests or private certificate contents.
+- **Operations:** no automatic network polling, scheduled costs or publication; Hermes handles final Cloudflare integration after legal/religious/content signoff.

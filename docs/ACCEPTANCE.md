@@ -76,3 +76,10 @@ Internal `accepted` is never a halal accreditation, even while a certificate is 
 | STANDARD | Search, category filters, native question reveals, accessible status and checklist, honest no-results, copy fallback, 1440/768/390/320 browser rendering without JS errors or overflow |
 | FULL | Independently verify religious/food science wording, Arabic, accessibility/contrast, source rights and community comprehension; real Pages deploy smoke delegated to Hermes at final acceptance |
 | RELEASE | Human content-owner approval, verified source policy, no misleading binary product results or certifier endorsement, no public indexing before product/company legal review |
+
+## FRESH-01 — Source audit & display
+
+- FAST: all public source dates are valid and non-future; no unapproved events or expired certification claims; `npm run audit:content` reports dated review tasks but never auto-publishes.
+- STANDARD: source reference is explicitly labelled as viewed, not independently verified; old records show a warning after 90 days, with an elevated warning after 180. Directory filtering, keyboard operation, empty states and responsive 320/390/768/1440 browser tests remain green.
+- FULL: content owners independently verify significant public listings, source permissions, certification and event claims; actual Pages branch preview, security/URL headers and scheduled freshness approach delegated to Hermes at final infrastructure phase.
+- RELEASE: operator logs genuine source visits, commits reviewed updates, obtains community/legal owner approval and manages takedown procedure. Stale data warning is a recheck task, not proof a business is closed.

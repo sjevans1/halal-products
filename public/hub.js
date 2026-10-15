@@ -14,10 +14,16 @@
       const meta=create('div','directory-meta');
       meta.append(create('span','directory-tag',l.kind==='mosque'?'Mosque':l.kind==='organization'?'Community / certification resource':l.kind));
       meta.append(create('span','directory-tag source-listed','Source listed · not independently checked'));
+      // Source dates reflect when a published reference was viewed, not verification of the venue.
+      const age=Math.floor((Date.now()-Date.parse(l.sourceCheckedAt+'T00:00:00Z'))/86400000);
+      if(Number.isFinite(age)&&age>90){
+        const message=age>180?'Older source · confirm directly':'Source recheck suggested';
+        meta.append(create('span','directory-tag source-warning',message));
+      }
       const title=create('h3','',l.name);const location=create('p','directory-location',l.locality);
       const summary=create('p','',l.summary);const footer=create('footer');
       const a=create('a','', 'View original source ↗');a.href=l.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';
-      const date=create('span','','Source checked: '+l.sourceCheckedAt);footer.append(a,date);
+      const date=create('span','','Source viewed: '+l.sourceCheckedAt);footer.append(a,date);
       el.append(meta,title,location,summary,footer);return el;
     }
     function render(){
