@@ -209,3 +209,19 @@ No positive halal claim, certification, named business verification, product ava
 - **QA:** native JWT and role rejection tests, cross-origin negative, input bounds, SQL trigger invariants, mocked Chromium on desktop/tablet/mobile/320px; FULL real Access/D1/Pages and WCAG assessments deferred to Hermes and human reviewers.
 - **Dependencies/owner:** business owner designates operator/editor/verifier identities and privacy controller; later Hermes configures signed Cloudflare Access JWT identity, D1 schema, feature flag, staging migration, rate limiting and preview. `HUB_EDITORIAL_ACTIVE` stays disabled by default.
 - **Following packages:** event/community partner stewardship, content publication handoff automation (still requiring human approval), commercial product/wholesale operations and payments only after verified suppliers, claims, licensing and fulfilment. Cloudflare deployment remains explicitly last.
+
+## 12. COMM-01 — Jamaica-first community and business contributions (stacked candidate)
+
+**Goal:** keep Tayyib’s primary visitors at the center: practicing Muslims resident in Jamaica, visitors or families seeking local community resources, and Jamaicans exploring halal. Prioritize understanding, useful action and source visibility above adding staff functionality.
+
+**Delivered in source:**
+
+- 15 generated first-party detail pages (`/places/<id>/`) with source provenance, source-viewed dates, distinct unknown status, practical checks before visiting, related community entries and contextual correction actions.
+- `/contribute/` with one mobile-first, accessible and guided choice for correction, listing, event or representative update. Record/title/source prefill only from checked-in directory data; no form promises owner access or halal verification.
+- A consistent contribution route from the directory, events and business partnership sections; clear independent-review process and public source expectations.
+- Reuse existing fail-closed D1/Turnstile pending-only submission endpoint and existing staff moderation and independent editorial workflows. No new real user account or sensitive identity capture.
+- UX journeys, acceptance tests, ADR-009 and operations runbook. No extra UI framework dependency; native components consistent with the website.
+
+**Intentionally excluded:** brand-owned merchant accounts, auto-publication, verified supplier badges, live mosque times, private documents or national-ID capture, authenticated steward delegation, payment/stock, real Cloudflare configuration. A representative suggestion is **not proof of representative identity**.
+
+**Next sequence:** (1) independent human UX/accessibility/halal-content review; (2) fuller administrator support for source and record linkage and later verified stewardship invitation lifecycle; (3) commerce operational design once legal/supplier/product data and fulfilment model are approved; (4) final release gate and Cloudflare deployment executed by Hermes.

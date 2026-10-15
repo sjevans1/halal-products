@@ -46,5 +46,5 @@ test('submissions have explicit gate and no accidental public publication path',
  const endpoint=read('functions/api/hub-suggest.js');
  assert.match(endpoint,/HUB_SUBMISSIONS_ACTIVE/);assert.match(endpoint,/turnstile\/v0\/siteverify/);assert.match(endpoint,/'pending'/);
  assert.doesNotMatch(endpoint,/UPDATE hub_suggestions SET review_status|SELECT \* FROM hub_suggestions/);
- assert.match(read('public/events/index.html'),/id="hub-suggest-submit" disabled/);
+ assert.match(read('public/events/index.html'),/href="\/contribute\/\?intent=event"/);
 });

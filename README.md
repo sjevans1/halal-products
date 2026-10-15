@@ -131,3 +131,9 @@ The source adds **`/operator/editorial/`**, an Access-gated private CMS workflow
 - Governance, release and Hermes handoff: `docs/EDITORIAL_STUDIO_RUNBOOK.md` and `docs/decisions/ADR-008-editorial-source-controlled-publication.md`.
 
 **No PR in the existing stack has been merged and no Cloudflare deployment has been initiated by this work.**
+
+## Jamaica-first community contribution experience (COMM-01)
+
+The public directory now has 15 generated `/places/<listing-id>/` pages. Each shows the original public reference, **source viewed** date (not verified opening), questions to confirm directly and links to suggest a specific correction. A consolidated `/contribute/` page guides residents, learners, mosque/community organizers and business representatives through source-backed corrections, new places and announcements. All submitted suggestions remain **pending** under the existing API; no new accounts, ownership claims or certificate grants are introduced. The source is generated with `npm run build` and guarded by native tests. The "/events" and "/partners" surfaces now link to the single form.
+
+`python3 browser-steward-check.py` exercises desktop/tablet/mobile/320px workflows using mocked requests, plus client-side validations and simulated server failures/success. The contribution journey is deliberately disabled until Hermes configures and validates the later Cloudflare release gate. See `docs/JAMAICA_UX_JOURNEYS.md`, `docs/COMMUNITY_STEWARDSHIP_RUNBOOK.md` and ADR-009. Human religious and Jamaica community usability review still required.

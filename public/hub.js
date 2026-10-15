@@ -24,7 +24,8 @@
       const summary=create('p','',l.summary);const footer=create('footer');
       const a=create('a','', 'View original source ↗');a.href=l.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';
       const date=create('span','','Source viewed: '+l.sourceCheckedAt);footer.append(a,date);
-      el.append(meta,title,location,summary,footer);return el;
+      const actions=create('div','directory-actions');const detail=create('a','directory-detail-link','View listing details →');detail.href='/places/'+encodeURIComponent(l.id)+'/';const correction=create('a','directory-correct-link','Suggest an update');correction.href='/contribute/?record='+encodeURIComponent(l.id)+'&intent=correction';actions.append(detail,correction);
+      el.append(meta,title,location,summary,footer,actions);return el;
     }
     function render(){
       const q=query.value.trim().toLocaleLowerCase();
@@ -55,33 +56,6 @@
     $('#hub-copy-shopping').addEventListener('click',async()=>{
       const text=`${recipe.title} — shopping list for ${serves}\n${recipe.ingredients.map(ing=>'• '+amount(ing)).join('\n')}`;
       try{await navigator.clipboard.writeText(text);$('#hub-copy-status').textContent='Shopping list copied.'}catch{$('#hub-copy-status').textContent='Copy unavailable in this browser. Select the ingredients above instead.'}
-    });
-  }
-  const form=$('#hub-suggest-form');
-  if(form){
-    const submit=$('#hub-suggest-submit'),status=$('#hub-suggest-status');let config=null,token=null,widget=null;
-    const setStatus=(message,state='')=>{status.textContent=message;status.className='hub-form-status '+state};
-    async function setup(){
-      try{
-        const response=await fetch('/api/hub-config',{cache:'no-store'});
-        if(!response.ok)return;
-        const res=await response.json();
-        if(res.enabled!==true||!res.turnstileSiteKey)return;
-        const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;
-        script.onload=()=>{if(!window.turnstile){setStatus('Verification is unavailable.','error');return}widget=window.turnstile.render('#hub-turnstile',{sitekey:res.turnstileSiteKey,callback:t=>{token=t;setStatus('Complete the details and send for moderation.')},'expired-callback':()=>{token=null;setStatus('Verification expired.','error')}});config=res;submit.disabled=false;setStatus('Complete the verification to send a moderated suggestion.')};
-        script.onerror=()=>setStatus('Verification is unavailable.','error');document.head.append(script);
-      }catch{setStatus('Suggestions are currently closed. Please check back soon.')}
-    }
-    setup();
-    form.addEventListener('submit',async e=>{
-      e.preventDefault();if(!config||!token){setStatus('Complete the security verification first.','error');return}
-      const payload={type:$('#hub-suggest-type').value,title:$('#hub-suggest-title').value.trim(),sourceUrl:$('#hub-suggest-url').value.trim(),note:$('#hub-suggest-note').value.trim(),website:form.elements.website.value,turnstileToken:token};
-      if(!['listing','event','correction'].includes(payload.type)||payload.title.length<3||payload.title.length>120){setStatus('Enter a valid title and category.','error');return}
-      try{const u=new URL(payload.sourceUrl);if(u.protocol!=='https:')throw Error();}catch{setStatus('Include a valid HTTPS source link.','error');return}
-      submit.disabled=true;setStatus('Submitting for review…');
-      try{const r=await fetch('/api/hub-suggest',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});const j=await r.json().catch(()=>null);if(!r.ok||!j?.ok)throw Error(j?.error||'Submission unavailable');setStatus('Suggestion received for review. It has not been published.','success');form.reset()}
-      catch(err){setStatus(err.message,'error')}
-      finally{token=null;if(window.turnstile&&widget!=null)window.turnstile.reset(widget);submit.disabled=false}
     });
   }
 })();

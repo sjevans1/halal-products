@@ -63,7 +63,7 @@ with sync_playwright() as pw:
             page.locator('button[data-detail="ground-beef"]').click()
             assert page.locator('#product-dialog').is_visible()
             assert '/products/ground-beef/' in page.locator('#modal-product-link').get_attribute('href')
-            assert page.locator('#modal-product-image').evaluate('(i)=>i.complete && i.naturalWidth>0')
+            page.wait_for_function("() => {const img=document.getElementById('modal-product-image');return img.complete && img.naturalWidth>0}",timeout=8000)
             page.keyboard.press('Escape')
             assert not page.locator('#product-dialog').is_visible()
             page.locator('[data-recipe="curry"]').click()
