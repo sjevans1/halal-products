@@ -119,3 +119,15 @@ The Learning Centre now links to `/learn/ingredients/`, a 14-topic source-linked
 Use `npm run audit:content` to check the 15 existing source-referenced community listings and the current editorial/commerce data for dates, overdue source reviews, unsupported certification claims and unapproved events. For machine-readable output use `node scripts/content-audit.mjs --json` or `--out /tmp/tayyib-audit.json`. The script does not contact any external site.
 
 The public directory labels source dates as **Source viewed** and provides an age warning after 90/180 days, without claiming that a venue is closed or that it is certified. Editors must review the real source and publish amendments via a separate human-reviewed GitHub PR. See `docs/SOURCE_FRESHNESS_OPERATIONS.md` and ADR-007. Automated reminders, publisher accounts, external monitoring and Cloudflare deployment remain deferred.
+
+## EDIT-01 private editorial workspace (draft candidate)
+
+The source adds **`/operator/editorial/`**, an Access-gated private CMS workflow for writing source-referenced community guides, directory corrections, event proposals and recipes. Draft edits, independent reviewer decisions and publication packet export are explicit, versioned and audit-logged; none change public pages automatically. Staff author/reviewer identities and D1 schema are not configured until Hermes' final Cloudflare acceptance wave.
+
+- New migration: `migrations/0006_editorial_workflow.sql` (after the previous five).
+- Server: `functions/api/operator/content.js` and `src/editorial-policy.js`; requires existing Access operator auth and separate `HUB_EDITORIAL_ACTIVE=true` + `HUB_EDITORIAL_REVIEWERS` configuration before anything can be used live.
+- UX: native responsive private studio at `public/operator/editorial/`, linked from the other operator pages. No React/Watermelon package needed for this phase.
+- QA: `npm run check` and `python3 browser-editorial-check.py` (browser is **mocked**).
+- Governance, release and Hermes handoff: `docs/EDITORIAL_STUDIO_RUNBOOK.md` and `docs/decisions/ADR-008-editorial-source-controlled-publication.md`.
+
+**No PR in the existing stack has been merged and no Cloudflare deployment has been initiated by this work.**

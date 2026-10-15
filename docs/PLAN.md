@@ -200,3 +200,12 @@ No positive halal claim, certification, named business verification, product ava
 | FRESH-01D | Unit tests, real Chromium directory recheck regression, edited SOP and quality gates | Local tests; Hermes later validates Cloudflare staging |
 
 **Next planned**: CONTENT-01 governed CMS with drafts, claims and review responsibilities; community steward proposals; due-date reports integrated into accountable editor workflow; final operational commerce gates after suppliers/products are real. This package must not be represented as a full publisher or operational certification service.
+
+## 11. EDIT-01 — Governed Editorial Studio (new stacked candidate)
+
+- **Admission:** the Hub directory, events and Learning Centre need a controlled way for staff to prepare and independently review corrections and new material without auto-publishing or inventing religious/food-safety assurances. This sits on top of FRESH-01.
+- **Scope:** `/operator/editorial/`, fail-closed `/api/operator/content`, `src/editorial-policy.js`, migration `0006_editorial_workflow.sql`, private plain-text structured proposals, independent reviewer allowlist, immutable review stages, compare-and-swap revisions, append-only SQL audit, read-only publication packet export. Types: guide, directory, event and recipe. Existing public homepage and catalogue remain unchanged.
+- **Trust boundaries:** author edits draft, independent reviewer records decision, separate human GitHub review releases public data. Internal acceptance cannot update public `hub.json`, confirm a halal certificate, announce an event, or issue a religious interpretation. External publisher and qualified community reviews remain necessary.
+- **QA:** native JWT and role rejection tests, cross-origin negative, input bounds, SQL trigger invariants, mocked Chromium on desktop/tablet/mobile/320px; FULL real Access/D1/Pages and WCAG assessments deferred to Hermes and human reviewers.
+- **Dependencies/owner:** business owner designates operator/editor/verifier identities and privacy controller; later Hermes configures signed Cloudflare Access JWT identity, D1 schema, feature flag, staging migration, rate limiting and preview. `HUB_EDITORIAL_ACTIVE` stays disabled by default.
+- **Following packages:** event/community partner stewardship, content publication handoff automation (still requiring human approval), commercial product/wholesale operations and payments only after verified suppliers, claims, licensing and fulfilment. Cloudflare deployment remains explicitly last.

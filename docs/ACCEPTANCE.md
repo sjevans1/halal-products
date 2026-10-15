@@ -83,3 +83,14 @@ Internal `accepted` is never a halal accreditation, even while a certificate is 
 - STANDARD: source reference is explicitly labelled as viewed, not independently verified; old records show a warning after 90 days, with an elevated warning after 180. Directory filtering, keyboard operation, empty states and responsive 320/390/768/1440 browser tests remain green.
 - FULL: content owners independently verify significant public listings, source permissions, certification and event claims; actual Pages branch preview, security/URL headers and scheduled freshness approach delegated to Hermes at final infrastructure phase.
 - RELEASE: operator logs genuine source visits, commits reviewed updates, obtains community/legal owner approval and manages takedown procedure. Stale data warning is a recheck task, not proof a business is closed.
+
+## EDIT-01 editorial authoring and independent approval
+
+| Tier | Required evidence | State |
+|---|---|---|
+| FAST | Static Node checks; fail-closed flags, verified operator JWT and reviewer allowlist, same-origin POST, input/date/source bounds, reviewer separation, CAS update and SQL trigger/audit invariants | Implemented local tests |
+| STANDARD | Real Chromium mock-browser review at 1440/768/390/320, create/edit, confirmation cancel, independent review, workflow status, audit visibility, accessible keyboard semantics and no overflow | Local browser script; independent manual review pending |
+| FULL | Real Cloudflare Access JWT/Zero Trust application, D1 migration, concurrency/integrity, backup/restore, privacy, security/CSRF, accessibility audit, real branch preview and smoke | Deferred to Hermes |
+| RELEASE | Owner approves the exact-head PR stack and the separate public content PR; accepted editorial entries are not automatically published or verified | NOT AUTHORIZED |
+
+No status of an internal proposal is proof that a company, mosque, product or religious event has been independently verified. Public content must have a separate source-controlled review and release.
