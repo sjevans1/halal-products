@@ -77,3 +77,6 @@ Risks: (R1) visual packaging could be mistaken for certified products → concep
 ### COMM-01 UX quality addition
 
 Primary measure: a person in Jamaica can discover a source-listed venue and understand its confidence level, reach its source, or propose a correction within three minutes using a phone. Test user groups include resident Muslims, new halal learners, organizers and food businesses; the latter have no assumed endorsement. Source cues must remain readable on narrow screens, and errors must be explicit. The public site must not introduce a login or unnecessary personal-data request. Screenshot simulations do not substitute for independent community usability testing.
+
+
+COMM-02 evidence: native negative identity/scope/date tests, real SQLite grant/revocation/proposal trigger tests and four-size browser journeys; third-party live security/identity and accessibility acceptance pending, no commerce.

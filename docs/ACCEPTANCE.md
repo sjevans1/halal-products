@@ -101,3 +101,9 @@ No status of an internal proposal is proof that a company, mosque, product or re
 - **STANDARD:** Chromium 1440/768/390/320 journeys for directory → place → contextual correction, source prefill, choice switching, no overflow or JS errors; API disabled state, mocked verified challenge, validation error, rejected request and successful **pending** submission. Existing catalogue/hub/ingredient/operator/trust/editorial browser regressions must pass.
 - **FULL / external:** subject-matter verification of religious terminology and source authority, moderated usability tests with Jamaican Muslim residents and learners, real WCAG keyboard and assistive-technology review, privacy/legal basis and abuse review, exact-head Cloudflare preview when Hermes starts final deployment.
 - **RELEASE:** no public directory edits without independently checked source and human publication PR; no claim of identity, approval or certification through an anonymous suggestion. Public submissions and production remain closed until explicit approval and real infrastructure acceptance.
+
+## COMM-02 representative permissions acceptance
+
+- FAST: approved existing ID; valid short-lived signed Access application identity; bounded source and note; independent operator role; no staff-audience reuse by representative; D1 grant revocation and audit immutability; internal review never publishes.
+- STANDARD: operator grant/revocation requires explicit confirmation, representative needs one clear update form, no JS error or horizontal overflow at 320/390/768/1440, and error/disabled states stay legible.
+- FULL: Cloudflare real Access policy protects *both* staff and representative HTML + APIs; deployed migrations 0001–0008, record minimization/privacy, revocation test, independent human organizational authority verification, WCAG keyboard/screen-reader walk-through, source and halal review. **Not yet accepted; reserved for Hermes at final stage.**

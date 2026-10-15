@@ -225,3 +225,11 @@ No positive halal claim, certification, named business verification, product ava
 **Intentionally excluded:** brand-owned merchant accounts, auto-publication, verified supplier badges, live mosque times, private documents or national-ID capture, authenticated steward delegation, payment/stock, real Cloudflare configuration. A representative suggestion is **not proof of representative identity**.
 
 **Next sequence:** (1) independent human UX/accessibility/halal-content review; (2) fuller administrator support for source and record linkage and later verified stewardship invitation lifecycle; (3) commerce operational design once legal/supplier/product data and fulfilment model are approved; (4) final release gate and Cloudflare deployment executed by Hermes.
+
+## 12. COMM-02 — Scoped and revocable community stewardship (development candidate)
+
+- Public visitors remain fully browseable without registration. Approved representatives can access only their independent-verified listing through a separate signed Access JWT policy and propose corrections, not directly publish.
+- Staff issue or revoke one-listing grants with explicit confirmation, independent reviewed notes, one-year expiry maximum, immutable D1 audit. Grant holders cannot review trust evidence or publish.
+- See `docs/STEWARD_ACCESS_RUNBOOK.md` and ADR-010. Cloudflare/D1/Access activation intentionally deferred to Hermes after independent review.
+- Quality contract: negative JWT audience and forged identity, invalid scope and expiry, revocation, no auto-publication, real SQLite triggers, mobile browser journeys.
+- Future: verified cross-organization delegates, capability-specific invited roles, supplier onboarding and commercial accounts only after actual operating arrangements are confirmed.
