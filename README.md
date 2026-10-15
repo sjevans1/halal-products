@@ -113,3 +113,9 @@ The Learning Centre now links to `/learn/ingredients/`, a 14-topic source-linked
 - Generated page: `public/learn/ingredients/index.html`, built by `scripts/build-ingredients.mjs`; assets: `public/ingredients.js`, `ingredients.css`, `ingredients-data.js`.
 - Browser regression: `python3 browser-ingredients-check.py` at 1440/768/390/320; native checks: `tests/ingredients.test.js` via `npm run check`.
 - Human expert/content review and Cloudflare deployment acceptance outstanding; see `docs/INGREDIENT_GUIDE_EDITORIAL_POLICY.md` and ADR-006.
+
+## FRESH-01 — Community source currency
+
+Use `npm run audit:content` to check the 15 existing source-referenced community listings and the current editorial/commerce data for dates, overdue source reviews, unsupported certification claims and unapproved events. For machine-readable output use `node scripts/content-audit.mjs --json` or `--out /tmp/tayyib-audit.json`. The script does not contact any external site.
+
+The public directory labels source dates as **Source viewed** and provides an age warning after 90/180 days, without claiming that a venue is closed or that it is certified. Editors must review the real source and publish amendments via a separate human-reviewed GitHub PR. See `docs/SOURCE_FRESHNESS_OPERATIONS.md` and ADR-007. Automated reminders, publisher accounts, external monitoring and Cloudflare deployment remain deferred.
