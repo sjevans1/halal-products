@@ -15,9 +15,8 @@ function settings(env){
   const emails=new Set(env.HUB_OPERATOR_EMAILS.split(',').map(e=>e.trim().toLowerCase()).filter(e=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)));
   return emails.size?{issuer:`https://${env.HUB_OPERATOR_TEAM_DOMAIN}`,aud:env.HUB_OPERATOR_AUD,domain:env.HUB_OPERATOR_TEAM_DOMAIN,emails}:null;
 }
-export async function authorize({request,env}){
-  const cfg=settings(env);
-  if(!cfg)return {error:deny(503)};
+/** Verify Access identity against an EXACT app audience; separate stewards and staff. */
+async function verifyAccessToken(request,cfg){
   const token=request.headers.get('cf-access-jwt-assertion');
   if(!token||token.length>12000)return {error:deny(401)};
   const parts=token.split('.');
@@ -28,7 +27,9 @@ export async function authorize({request,env}){
   if(header?.alg!=='RS256'||typeof header.kid!=='string'||header.kid.length>256||typeof claims!=='object'||!claims)return {error:deny(401)};
   const now=Math.floor(Date.now()/1000);
   if(claims.iss!==cfg.issuer||!(Array.isArray(claims.aud)?claims.aud.includes(cfg.aud):claims.aud===cfg.aud)||!Number.isInteger(claims.exp)||claims.exp<=now||!Number.isInteger(claims.iat)||claims.iat>now+60||claims.iat<now-86400||claims.exp-claims.iat>86400|| (claims.nbf!=null&&(!Number.isInteger(claims.nbf)||claims.nbf>now+60)))return {error:deny(401)};
-  if(typeof claims.email!=='string'||!cfg.emails.has(claims.email.toLowerCase()))return {error:deny(403)};
+  if(typeof claims.email!=='string'||!validIdentityEmail(claims.email))return {error:deny(401)};
+  const email=claims.email.toLowerCase();
+  if(cfg.emails&&!cfg.emails.has(email))return {error:deny(403)};
   try{
     const response=await fetch(`${cfg.issuer}/cdn-cgi/access/certs`,{headers:{accept:'application/json'}});
     if(!response.ok)return {error:deny(503)};
@@ -37,8 +38,22 @@ export async function authorize({request,env}){
     if(!jwk)return {error:deny(401)};
     const key=await crypto.subtle.importKey('jwk',jwk,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
     const valid=await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,signature,new TextEncoder().encode(`${parts[0]}.${parts[1]}`));
-    return valid?{email:claims.email.toLowerCase(),db:env.WAITLIST_DB}:{error:deny(401)};
+    return valid?{email}:{error:deny(401)};
   }catch{return {error:deny(503)}}
+}
+const validIdentityEmail=email=>email.length<=254&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+export async function authorize({request,env}){
+  const cfg=settings(env);
+  if(!cfg)return {error:deny(503)};
+  const result=await verifyAccessToken(request,cfg);
+  return result.error?result:{email:result.email,db:env.WAITLIST_DB};
+}
+/** Steward app MUST be separate from staff policy/audience and cannot inherit operator rights. */
+export async function authorizeSteward({request,env}){
+  if(env?.HUB_STEWARD_ACTIVE!=='true'||!env.WAITLIST_DB||!hostnamePattern.test(env.HUB_STEWARD_TEAM_DOMAIN||'')||typeof env.HUB_STEWARD_AUD!=='string'||!env.HUB_STEWARD_AUD.trim())return {error:deny(503)};
+  const cfg={issuer:`https://${env.HUB_STEWARD_TEAM_DOMAIN}`,aud:env.HUB_STEWARD_AUD};
+  const result=await verifyAccessToken(request,cfg);
+  return result.error?result:{email:result.email,db:env.WAITLIST_DB};
 }
 export function requireSameOrigin(request){
   try{return request.headers.get('origin')===new URL(request.url).origin}
