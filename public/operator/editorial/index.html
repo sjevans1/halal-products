@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#103c2e"><title>Tayyib Halal — Editorial Studio</title><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/operator/operator.css"><link rel="stylesheet" href="/operator/editorial/editorial.css"><script src="/operator/editorial/editorial.js" defer></script></head>
+<body><a class="skip" href="#editorial-content">Skip to editorial workspace</a>
+<header><a class="wordmark" href="/">✦ TAYYIB HALAL</a><nav class="operator-links" aria-label="Operator workspace"><a href="/operator/">Suggestions</a><a href="/operator/trust/">Trust</a><a href="/operator/editorial/" aria-current="page">Editorial Studio</a></nav></header>
+<main id="editorial-content"><div class="eyebrow">THE COMMUNITY HUB / 03 — INTERNAL EDITORIAL WORKSPACE</div>
+ <section class="intro"><div><h1>Stories worth <em>sharing.</em></h1><p>Prepare guides, directory corrections, event announcements and kitchen stories with meaningful provenance. Every proposed change stays private until independent review and a separate human-approved source publication.</p></div><div class="rule">Write with care.<br><strong>Publish with proof.</strong></div></section>
+ <div class="editorial-proof" aria-label="Editorial workflow stages"><div><strong>01 · Create</strong><span>Private source-linked draft</span></div><div><strong>02 · Review</strong><span>Independent editorial assessment</span></div><div><strong>03 · Release</strong><span>Separate approved GitHub content change</span></div></div>
+ <section class="edit-panel" aria-labelledby="draft-heading"><div class="section-head"><div><div class="eyebrow">COMPOSE &amp; REVISE</div><h2 id="draft-heading">New content proposal</h2></div><button id="clear-draft" type="button" class="secondary-btn">Start a new draft</button></div>
+ <p class="muted">Plain text only. Do not paste private supplier documents, customer data or credentials. A source URL does not establish halal certification, endorsement or confirmed event details.</p>
+ <form id="editorial-form" novalidate><div class="fields">
+  <label>Content type<select id="kind" required><option value="guide">Halal living guide</option><option value="directory">Directory update</option><option value="event">Community event</option><option value="recipe">Kitchen recipe</option></select></label>
+  <label>Reference slug<input id="slug" required maxlength="70" placeholder="understanding-halal-food" pattern="[a-z0-9]+(-[a-z0-9]+)*"></label>
+  <label class="full">Editorial title<input id="title" required maxlength="140" minlength="5" placeholder="A thoughtful guide to halal choices"></label>
+  <label class="full">Summary<textarea id="summary" required maxlength="320" minlength="20" rows="3" placeholder="Tell readers what they'll learn or discover."></textarea></label>
+  <label class="full">Story, proposed update or recipe text<textarea id="body" required maxlength="6000" minlength="50" rows="9" placeholder="Draft your factual content here. Publishing requires independent verification."></textarea></label>
+  <label class="full">Public HTTPS reference<input id="source-url" type="url" required maxlength="700" placeholder="https://original-publisher.example/guide"></label>
+  <label>Parish / locality <span class="optional">(required for events and directory)</span><input id="parish" maxlength="90" placeholder="Kingston"></label>
+  <label>Event date <span class="optional">(events only)</span><input id="event-date" type="date"></label>
+ </div><div class="form-footer"><button type="submit" id="save-draft" class="primary-btn" disabled>Save private draft ↗</button><span id="draft-context">No draft selected. Changes aren't published automatically.</span></div></form>
+ </section>
+ <section class="edit-panel" aria-labelledby="queue-heading"><div class="section-head"><div><div class="eyebrow">EDITORIAL PIPELINE</div><h2 id="queue-heading">Review &amp; revisions</h2></div><button id="refresh" type="button">Refresh ↻</button></div>
+ <div class="filters" role="group" aria-label="Filter editorial entries"><button type="button" data-status="draft" aria-pressed="true">Drafts</button><button type="button" data-status="submitted" aria-pressed="false">For review</button><button type="button" data-status="changes_requested" aria-pressed="false">Changes needed</button><button type="button" data-status="approved" aria-pressed="false">Accepted internally</button><button type="button" data-status="rejected" aria-pressed="false">Rejected</button></div>
+ <p id="editorial-status" role="status" aria-live="polite">Connecting to the private editorial workspace…</p><div id="editorial-items" class="items"></div><button id="more" type="button" hidden>Load more ↓</button>
+ </section>
+ <div class="footer-note"><h2>Editorial approval is not publication.</h2><p>The public Community Hub continues to be generated from reviewed source-controlled content. An internal reviewer cannot activate a religious claim, certify a business, alter prayer times or publish an event. Public release requires evidence and an independently approved content change.</p></div>
+</main>
+<dialog id="editorial-confirm" aria-labelledby="confirm-title" aria-describedby="confirm-detail"><form method="dialog"><div class="eyebrow">CONFIRM A MATERIAL CHANGE</div><h2 id="confirm-title">Confirm decision</h2><p id="confirm-detail"></p><div class="confirm-actions"><button type="submit" value="cancel">Cancel</button><button type="submit" value="confirm" class="primary-btn">Confirm</button></div></form></dialog>
+<dialog id="editorial-history" aria-labelledby="history-title"><h2 id="history-title">Editorial history</h2><div id="history-items"></div><button type="button" id="close-history">Close</button></dialog>
+</body></html>

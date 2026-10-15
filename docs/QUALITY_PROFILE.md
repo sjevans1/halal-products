@@ -64,3 +64,12 @@ Risks: (R1) visual packaging could be mistaken for certified products → concep
 - **Release blocker:** future/invalid dates, unapproved events, missing certifier scope and expired certificate claims. Date-only audits do not make claims reliable; human follow-up required.
 - **Privacy:** all checks are local and use only public metadata, no user profiles, requests or private certificate contents.
 - **Operations:** no automatic network polling, scheduled costs or publication; Hermes handles final Cloudflare integration after legal/religious/content signoff.
+
+## EDIT-01 editorial data and publication assurance
+
+- **Risk:** unauthorized staff access, forged identity, unsafe source claims, accidental publication, content tampering and outdated editor data. The console is private, noindexed and disconnected from public publication writes.
+- **Authentication:** signed Cloudflare Access JWT, operator allowlist, additional independent reviewer allowlist; all on server. No browser-stored session secret, anonymous POST or credential in HTML.
+- **Data:** plain text only, bounded source URLs and field lengths, no private supplier documents or personal religious affiliation. Consider staff email/notes privacy and retention before activation.
+- **Database:** compare-and-swap revision, SQL transition guard, anti-self-approval, append-only audit, delete blocked. Trust evidence approval remains a separate authority.
+- **Quality:** mocked multi-viewport Chromium plus native and SQLite tests; actual WCAG, Cloudflare Access, D1/incident restore, rate limit and independent security review remain pending.
+- **Human release:** approved means an internal editorial outcome. Copying a publication packet cannot publish a page; public content still requires independent verified source PR and owner release approval.
