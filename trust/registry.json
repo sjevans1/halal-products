@@ -1,0 +1,146 @@
+{
+  "policy": "internal-only; accepted evidence is never authorization to publish a certification claim",
+  "edition": "2026-10-15",
+  "subjects": [
+    {
+      "key": "product:beef-cubes",
+      "kind": "product",
+      "name": "Premium Beef Cubes",
+      "baseline": "unverified",
+      "origin": "catalog/catalog.json"
+    },
+    {
+      "key": "product:ground-beef",
+      "kind": "product",
+      "name": "Ground Beef",
+      "baseline": "unverified",
+      "origin": "catalog/catalog.json"
+    },
+    {
+      "key": "product:jerk-sausages",
+      "kind": "product",
+      "name": "Jerk Beef Sausages",
+      "baseline": "unverified",
+      "origin": "catalog/catalog.json"
+    },
+    {
+      "key": "product:qaddid",
+      "kind": "product",
+      "name": "Qaddid Traditional Dried Beef",
+      "baseline": "unverified",
+      "origin": "catalog/catalog.json"
+    },
+    {
+      "key": "product:spice",
+      "kind": "product",
+      "name": "Roasted Meat Spice Blend",
+      "baseline": "unverified",
+      "origin": "catalog/catalog.json"
+    },
+    {
+      "key": "community:central-masjid",
+      "kind": "community",
+      "name": "Central Masjid",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:dawah-montego",
+      "kind": "community",
+      "name": "Islamic Da’wah Centre",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:al-hikmah",
+      "kind": "community",
+      "name": "Masjid Al-Hikmah",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:al-haqq",
+      "kind": "community",
+      "name": "Masjid Al-Haqq",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:as-sabr",
+      "kind": "community",
+      "name": "Masjid As-Sabr",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:quba",
+      "kind": "community",
+      "name": "Masjid Quba",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:ar-rahman",
+      "kind": "community",
+      "name": "Masjid Ar-Rahman",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:an-nur",
+      "kind": "community",
+      "name": "Masjid An-Nur",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:al-furqan",
+      "kind": "community",
+      "name": "Masjid Al-Furqan",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:al-ihsan",
+      "kind": "community",
+      "name": "Masjid Al-Ihsan",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:at-taqwaa",
+      "kind": "community",
+      "name": "Masjid At-Taqwaa",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:as-salaam",
+      "kind": "community",
+      "name": "Masjid As-Salaam",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:jamaica-halal-council",
+      "kind": "community",
+      "name": "Jamaica Halal Council",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:jamaica-foundation-islamic-charity",
+      "kind": "community",
+      "name": "Jamaica Foundation for Islamic Charity",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    },
+    {
+      "key": "community:mahdi-mosque",
+      "kind": "community",
+      "name": "Mahdi Mosque",
+      "baseline": "source-listed-only",
+      "origin": "hub/hub.json"
+    }
+  ]
+}

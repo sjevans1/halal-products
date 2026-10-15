@@ -55,3 +55,15 @@ Unverified or out-of-date information must be corrected or explicitly shown as p
 | STANDARD | Native `dialog` confirmation before any mutation, status navigation, queue rendering, clear errors, 1440/390/320 UI browser journeys, no overflow or JS errors, responsive focus/readability | Local Chromium simulated; independent WCAG review pending |
 | FULL | Live Cloudflare Access policy on `/operator/*` and `/api/operator/*`, real JWTs, actual D1 migration + transactional audit, external actor denies, real preview, CSRF/abuse, privacy/retention and rollback drill | **Outstanding** |
 | RELEASE | Owner approves branch merge separately from deploy; visitor suggestion intake and operator activation explicitly controlled, public publishing always via human-reviewed source-control change | **Not authorized** |
+
+## TRUST-01 — Internal evidence acceptance matrix
+
+| Tier | Gate | Evidence / state |
+|---|---|---|
+| FAST | 20 initial unverified/source-listed records, referential integrity, documented source origin; syntax, negative authorization, URL/date/claim boundary, no-publication; only forward-only seed migrations | Native tests and `scripts/build-trust.mjs` |
+| STANDARD | Real SQLite schema/trigger assertions: atomic automatic audit, self-review denial, state machine, evidence immutability, version conflict, dispute; desktop/tablet/mobile/320 UI controls, explicit confirmation | `tests/trust-sqlite-check.py`, `browser-trust-check.py`; external WCAG review not complete |
+| FULL | Independent security and UX review, real Cloudflare Access JWT/JWKS in a staging deployment, exact-head D1 migration and audit rollback, confidentiality/privacy/retention, hostname/CSRF verification, no public disclosure | **Deferred to Hermes final Cloudflare acceptance** |
+| ACTIVATION | Editors and independent verifiers nominated, documented issuer-check method and dispute/takedown policy, signed-off retention and audit exports, `HUB_TRUST_ACTIVE=true` only after security approval | **Not authorized** |
+| PUBLICATION | Independent source/claim assessment, qualified food-safety/halal/religious signoff where relevant, human-approved content PR and production release decision | **No publication path in this package** |
+
+Internal `accepted` is never a halal accreditation, even while a certificate is valid. The case status is for internal evidence workflow only; `review_due` or expired `valid_until` causes a derived recheck flag without mutating or hiding audit history. A URL alone is not proof of the issuer or of current halal status.

@@ -93,3 +93,14 @@ A separate **unactivated** staff workspace now exists at `/operator/`, backed by
 See [`docs/OPERATOR_REVIEW_RUNBOOK.md`](docs/OPERATOR_REVIEW_RUNBOOK.md) and [`docs/decisions/ADR-004-operator-review-boundary.md`](docs/decisions/ADR-004-operator-review-boundary.md). Before activation, provision and test Cloudflare Zero Trust Access protection over both operator UI and API, `HUB_OPERATOR_TEAM_DOMAIN`, `HUB_OPERATOR_AUD`, `HUB_OPERATOR_EMAILS`, `HUB_OPERATOR_ACTIVE=true`, D1 `WAITLIST_DB` and reviewed migration `0003_operator_moderation.sql`. Independent privacy, rate limits and real Cloudflare integration remain required. Default is 503/deny. Never trust browser-supplied identities or enable the public suggestions API by implication.
 
 Local operator UI mock journeys: `python browser-operator-check.py`. Node security/transition tests are included in `npm run check`. Neither uses live Cloudflare credentials, Access or D1.
+
+## TRUST-01 — Private evidence and supplier provenance preparation
+
+The next development package adds a **private**, Cloudflare Access-governed `/operator/trust/` workspace with baseline subject records, evidence/expiry tracking, a two-role editor/verifier workflow, status filters and immutable case history. All five product concepts and all 15 public-source community records begin **unverified** or **source-listed only**. No public certification badges or supply claims are generated.
+
+- Source data: `trust/registry.json`, validated against `catalog/catalog.json` and `hub/hub.json` by `scripts/build-trust.mjs`.
+- Forward-only D1 migrations: `0004_trust_register.sql`, `0005_trust_subjects.sql`. Do not rewrite old migrations; create a new seed migration for new subjects.
+- Access-controlled API: `/api/operator/trust`. Rejects all requests unless `HUB_TRUST_ACTIVE=true` **and** existing `HUB_OPERATOR_ACTIVE`, Access JWT, editor allowlist, D1 bindings are valid. Approval/rejection also requires the separate `HUB_VERIFIER_EMAILS` role and a reviewer different from the submitter.
+- Review states, due dates, conflict detection, audit-history view and database-enforced triggers documented in `docs/TRUST_VERIFICATION_RUNBOOK.md` and ADR-005. Publication remains an independent human GitHub release decision.
+- Local validation: `npm run check` (includes real SQLite invariant assertions), `python3 browser-trust-check.py`, plus existing hub/operator/catalogue regression scripts. These are simulations: **no actual Cloudflare Access or live database has been configured**.
+- **Infrastructure handoff to Hermes only at final launch acceptance**. No Cloudflare preview, D1 migration or operator activation is authorized by this development-only candidate.

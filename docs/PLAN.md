@@ -140,3 +140,37 @@ A branch preview can be shared with the product owner for review only after CI s
 - **Not included:** user account management, claims verification/certification, staff invitations, auto-publication, supplier/order operations, activated signup, live domain, third-party email sending.
 - **Next package after acceptance:** certified supplier and venue provenance register + editor workflows, source-freshness reviews, scheduled content audit, privacy/legal implementation, and Cloudflare deployment acceptance. Commence paid commerce only after supply and fulfilment evidence.
 - **Release boundaries:** do not merge upstream PR #1/#2 or this stacked PR without human approval; do not enable `HUB_OPERATOR_ACTIVE` or `HUB_SUBMISSIONS_ACTIVE` without a real environment and the runbook gates in `docs/OPERATOR_REVIEW_RUNBOOK.md`.
+
+## 11. TRUST-01 — Independent evidence and provenance register (stacked candidate)
+
+**Admitted after HUB-09 as a separate UX-first work package. Cloudflare integration remains deferred to Hermes at final release.** The goal is to make documentation and evidence review manageable without inventing suppliers or misrepresenting certification.
+
+### Delivered in this candidate
+
+| ID | Functionality | Completion boundary |
+|---|---|---|
+| TRUST-01A | Registry with all 5 product concepts + 15 published-source community subjects; every initial record unverified/source-listed | Local validated; no certification claims |
+| TRUST-01B | Private subject selection, evidence categories, claim, public HTTPS evidence URL, issuer-as-supplied, specific scope, validity and review due dates | Local UI and input/API validations |
+| TRUST-01C | Explicit `pending → accepted/rejected`, `accepted → disputed`, separate verifier allowlist and ban on self-review | Local API, JWT and SQLite tests |
+| TRUST-01D | Immutable evidence and SQLite-triggered audit history; bounded queue, status filter, review-due calculation and per-case audit dialog | Local UI and database tests |
+| TRUST-01E | Independent editorial publication boundary, forward-only migrations, emergency disable and operational runbook | Documented; live operational proof pending |
+
+### Definition of done for this development package
+
+1. `npm run check` runs native security/content tests plus real SQLite trigger/transaction checks; no source or identity bypass.
+2. `python3 browser-trust-check.py` validates the operator's essential journeys across desktop/tablet/mobile/small viewports with mocked APIs, including explicit confirmation and error state.
+3. Existing catalogue, hub and submission-review browser regressions remain passing.
+4. No public page or search endpoint can read the internal evidence register or interpret accepted evidence as certification.
+5. All migrations are additive; updates to baseline subject sources are made via separate reviewed migrations, not silently rewriting history.
+6. Independent review of API, D1 transactions, accessibility and actual Cloudflare authentication is required before activation.
+
+### Next implementation waves after TRUST-01
+
+- **CONTENT-01 — Governed editorial CMS:** drafts and review/approval history for articles, directory corrections, recipes, dates and events; independent publisher role; GitHub-backed generated publication preview; takedown workflow; no edits to live content directly from public suggestions.
+- **COMMUNITY-02 — Richer useful features:** community steward proposals, verified hours/services, source-date freshness monitoring, relevant Jamaicans' halal food and cultural editorial content, responsibly calculated and mosque-confirmed Ramadan/prayer guidance, mapped directory only for verified locations.
+- **COMMERCE-01 — Operational catalogue:** supplier contracts/production SKU specification and claims readiness, approved label/halal/food-safety statements, warehousing/cold chain, JMD pricing, order & inventory logic, payment fulfilment, customer care; infrastructure integration comes at acceptance stage.
+- **OPS-01 — Final Cloudflare acceptance with Hermes:** connect the approved PR stack, branch preview, Access/Pages/D1/Turnstile configuration, migrations, WAF/rate limits, privacy/legal signoff, operator role setup, real browser/auth/DB/rollback testing. **No Cloudflare configuration is performed during current build waves.**
+
+### Non-code dependencies to track (never represent as completed by implementation)
+
+Ownership/legal entity and brand marks; real products and suppliers; qualified halal and food-safety verification; accurate community locations/contacts and consenting organizations; religious editorial and Arabic reviews; actual business contact, public privacy policy and email consent workflow; live pricing, inventory, logistics, fulfillment, customer support and payments. These require people, records and approvals outside this repository.
