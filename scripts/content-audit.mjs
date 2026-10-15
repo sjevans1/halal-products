@@ -38,7 +38,7 @@ if(run){
  const report=auditContent({hub:read('hub/hub.json'),ingredients:read('hub/ingredient-guide.json'),catalog:read('catalog/catalog.json'),today});
  if(process.argv.includes('--json'))console.log(JSON.stringify(report,null,2));
  else{
-  console.log(`Tayyib community source audit — ${report.asOf}`);
+  console.log(`Tayyib community source audit: ${report.asOf}`);
   console.log(`Source references viewed ≤90 days: ${report.counts.recent}; 91–180 days: ${report.counts.due}; >180 days: ${report.counts.stale}; verified certification claims: ${report.counts.certified}`);
   for(const e of report.entries.filter(x=>x.reviewState!=='source-recent'))console.log(`FOLLOW-UP ${e.reviewState}: ${e.id} (${e.ageDays} days; ${e.sourceViewedAt}). Source must be rechecked, not assumed wrong.`);
   console.log(`BLOCKING content issues: ${report.blocking.length}`);

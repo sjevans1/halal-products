@@ -54,7 +54,7 @@
     $('#hub-servings-minus').addEventListener('click',()=>{serves=Math.max(1,serves-1);ingredients()});
     $('#hub-servings-plus').addEventListener('click',()=>{serves=Math.min(16,serves+1);ingredients()});
     $('#hub-copy-shopping').addEventListener('click',async()=>{
-      const text=`${recipe.title} — shopping list for ${serves}\n${recipe.ingredients.map(ing=>'• '+amount(ing)).join('\n')}`;
+      const text=`${recipe.title}: shopping list for ${serves}\n${recipe.ingredients.map(ing=>'• '+amount(ing)).join('\n')}`;
       try{await navigator.clipboard.writeText(text);$('#hub-copy-status').textContent='Shopping list copied.'}catch{$('#hub-copy-status').textContent='Copy unavailable in this browser. Select the ingredients above instead.'}
     });
   }

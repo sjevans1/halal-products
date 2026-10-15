@@ -52,7 +52,7 @@
       "id": "sunday-pot", "name": "The Sunday Pot Edit", "subtitle": "From freezer to family table", "description": "A comforting pairing for curry days and slow-cooked favourites.", "products": ["beef-cubes", "spice"], "label": "HOME COOKING"
     },
     {
-      "id": "island-grill", "name": "The Island Grill Edit", "subtitle": "Bring the weekend home", "description": "Gather around bold Jamaican-inspired flavours and easy grilling ideas.", "products": ["jerk-sausages", "spice", "beef-cubes"], "label": "GATHER & SHARE"
+      "id": "grill-of-the-island", "name": "Grill of the Island", "subtitle": "Bring the weekend home", "description": "Gather around bold Jamaican-inspired flavours and easy grilling ideas.", "products": ["jerk-sausages", "spice", "beef-cubes"], "label": "GATHER & SHARE"
     },
     {
       "id": "everyday-kitchen", "name": "The Everyday Kitchen Edit", "subtitle": "Good food, made easy", "description": "Two freezer fundamentals imagined for many different meals.", "products": ["ground-beef", "beef-cubes"], "label": "WEEKNIGHT ESSENTIALS"

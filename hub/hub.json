@@ -267,7 +267,7 @@
       ],
       "sources": [
         {
-          "label": "Jamaica Halal Council — Certification",
+          "label": "Jamaica Halal Council: Certification",
           "url": "https://jamhalco.org/service/certification/"
         }
       ]
@@ -290,7 +290,7 @@
       ],
       "sources": [
         {
-          "label": "Jamaica Halal Council — About",
+          "label": "Jamaica Halal Council: About",
           "url": "https://jamhalco.org/about-us/"
         }
       ]
@@ -317,7 +317,7 @@
       ],
       "sources": [
         {
-          "label": "Jamaica Halal Council — Services",
+          "label": "Jamaica Halal Council: Services",
           "url": "https://jamhalco.org/services/"
         }
       ]
@@ -358,7 +358,7 @@
       "image": "curry-dish.webp",
       "timeMinutes": 85,
       "serves": 4,
-      "summary": "Slow-simmered beef, fragrant curry, potatoes and fresh thyme — made for sharing.",
+      "summary": "Slow-simmered beef, fragrant curry, potatoes and fresh thyme: made for sharing.",
       "productIds": [
         "beef-cubes",
         "spice"
@@ -410,7 +410,7 @@
     {
       "id": "skewers",
       "title": "Jerk beef skewers",
-      "category": "Island grill",
+      "category": "Island-inspired grilling",
       "image": "skewers-dish.webp",
       "timeMinutes": 45,
       "serves": 4,
