@@ -1,0 +1,13 @@
+{
+  "name": "tayyib-halal-launch",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "UX-first Cloudflare Pages launch website for Tayyib Halal",
+  "scripts": {
+    "check": "node --check public/app.js && node --check functions/api/config.js && node --check functions/api/subscribe.js && node --test tests/*.test.js",
+    "dev": "npx wrangler pages dev public --d1 WAITLIST_DB=tayyib-waitlist",
+    "deploy": "echo 'Deploy via Cloudflare Pages Git integration; approval required' && exit 1"
+  },
+  "engines": {"node": ">=22"}
+}

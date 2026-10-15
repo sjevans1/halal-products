@@ -1,0 +1,29 @@
+# Website Acceptance Contract
+
+Status: **candidate, not yet accepted**. Applies to exact branch SHA. Approval and release remain human decisions.
+
+## FAST
+
+- `npm run check`: Node 22 syntax, native frontend content invariants, API failure cases, data protection tests.
+- All concept imagery loaded from local repository content; no unverified external images, checkout links, domains, social accounts or fabricated certificates.
+- No source secrets, migrations or operational planning exposed in static `public/` path.
+
+## STANDARD
+
+- Browser journeys: (1) responsive navigation, (2) collection filtering, (3) product detail, (4) favorites persist, (5) site search, (6) recipe, (7) FAQ, (8) signup in disabled state and explicit error.
+- Chromium desktop 1440×900 and mobile 390×844 screenshots checked by a human for major overlaps, contrast, inconsistent spacing and missing imagery.
+- Keyboard: Tab reaches controls, Esc closes dialogs, modal focus stays within dialog, visible focus indicators, screenreader labels/descriptions on essential actions.
+- Responsive: 320, 390, 768, 1024, 1440 widths with no meaningful horizontal scrolling.
+- Reduced-motion settings respected. No unexpectedly auto-playing visual/audio.
+
+## FULL / activation
+
+- Cloudflare Pages branch preview successfully served over HTTPS. Validate `_headers`, static routes, 404 behavior, Pages Functions and build output `public`.
+- If activating signups, D1 migration applied, scoped D1 binding and server-side Turnstile secret configured; test real successful submission, invalid email, duplicate email, missing consent, invalid/reused challenge token, and DB outage. Verify unsubscribe and retention process. Consent/privacy/business contact approved.
+- Privacy/security review, basic Lighthouse mobile + accessibility audit and product-owner walkthrough recorded at exact candidate SHA; no unsupported compliance claims.
+- Launch content approved: imagery rights, halal certificates, product specs and all branded contact URLs verified. No checkout until commerce phase.
+- Human authorizes merge; production deploy is a separate explicit gate. Keep records of git SHA, checks, previews, decisions, open exceptions.
+
+## Known limitations
+
+This is a **pre-commerce launch candidate**: no product ordering, inventory, pricing, shipping, email delivery, operator admin, search index, tracking analytics or certified halal claims. Assets are branded mockups. Signup endpoint will be unavailable until Cloudflare resources are configured. No acceptance check can substitute for actual human design and religious/food-safety verification.
