@@ -1,0 +1,9 @@
+framework:
+  repository: sjevans1/OpenJM-Development-Framework
+  version: 1.7.0
+  commit: e35a2ec4f57a4919d0c4962a5f58b8067dcfd897
+  adopted_on: 2026-10-15
+  execution_mode: manual
+  supervisor: manual_independent_review
+  merge_authority: human_only
+  release_authority: human_only
