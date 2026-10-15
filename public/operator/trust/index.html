@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#103c2e"><title>Tayyib Halal — Trust &amp; Evidence</title><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/operator/operator.css"><link rel="stylesheet" href="/operator/trust/trust.css"><script src="/operator/trust/trust.js" defer></script></head>
+<body><a class="skip" href="#trust-cases">Skip to evidence cases</a>
+<header><a class="wordmark" href="/">✦ TAYYIB HALAL</a><nav class="operator-links" aria-label="Operator workspace"><a href="/operator/">Submission review</a><a href="/operator/trust/" aria-current="page">Trust &amp; evidence</a></nav></header>
+<main>
+ <div class="eyebrow">CONTENT GOVERNANCE / 02 — RESTRICTED WORKSPACE</div>
+ <div class="intro trust-intro"><div><h1>Evidence before <em>assurance.</em></h1><p>Track sources, supplier claims and review deadlines. A case marked <strong>accepted</strong> means an internal reviewer has assessed the submitted evidence. It never certifies a product, restaurant or religious organization, and it never publishes anything.</p></div><div class="rule">A different reviewer<br><strong>must verify.</strong></div></div>
+ <section class="trust-stats" aria-label="Rules of this workspace"><div><span id="subject-count">20</span><p>Initial unverified subjects</p></div><div><span>2</span><p>Separate authorities: submit and verify</p></div><div><span>0</span><p>Public claims published by this tool</p></div></section>
+ <section class="trust-panel" id="create-case" aria-labelledby="create-title"><div class="section-head"><div><div class="eyebrow">01 / REGISTER EVIDENCE</div><h2 id="create-title">Start an evidence case</h2></div><p class="panel-copy">References only. Do not paste private certificates, customer data, personal information or restricted documents into this form.</p></div>
+ <form id="trust-form" class="trust-form" novalidate>
+  <label>Subject <select id="subject" required><option value="">Loading protected subject register…</option></select></label>
+  <label>Evidence category <select id="evidence-type" required><option value="">Select a subject first</option></select></label>
+  <label class="wide">What specific claim requires checking? <textarea id="claim" required minlength="15" maxlength="240" placeholder="Example: Supplier declaration identifying the proposed origin of beef for this SKU"></textarea></label>
+  <label class="wide">Evidence source (public HTTPS URL) <input id="evidence-url" type="url" required placeholder="https://example.org/official-source" maxlength="700"></label>
+  <label class="wide">Scope and limitations <textarea id="scope" required minlength="10" maxlength="360" placeholder="Name the relevant SKU, facility, date range or business; include what this does NOT establish."></textarea></label>
+  <label class="wide">Issuing organization (for certification claims) <input id="issuer" maxlength="160" placeholder="Not a certification authority unless independently confirmed"></label>
+  <label>Valid from (certificates only) <input type="date" id="valid-from"></label>
+  <label>Valid until (certificates only) <input type="date" id="valid-until"></label>
+  <label>Next review due <input type="date" id="review-due" required></label>
+  <div class="form-actions"><button type="submit" id="submit-case" disabled>Submit for independent review ↗</button><span>Submitting does not publish or verify a claim.</span></div>
+ </form>
+ </section>
+ <section id="trust-cases" class="trust-panel" aria-labelledby="cases-title"><div class="section-head"><div><div class="eyebrow">02 / RESEARCH &amp; FOLLOW-UP</div><h2 id="cases-title">Evidence review queue</h2></div><button id="refresh-cases" type="button">Refresh ↻</button></div>
+ <div class="filters" role="group" aria-label="Evidence case filters"><button type="button" data-trust-status="pending" aria-pressed="true">Pending</button><button type="button" data-trust-status="due" aria-pressed="false">Review due</button><button type="button" data-trust-status="accepted" aria-pressed="false">Accepted internally</button><button type="button" data-trust-status="disputed" aria-pressed="false">Disputed</button><button type="button" data-trust-status="rejected" aria-pressed="false">Rejected</button></div>
+ <p id="trust-message" role="status" aria-live="polite">Connecting to the private evidence register…</p><div id="trust-items" class="items"></div><button type="button" id="trust-more" hidden>Load older cases ↓</button>
+ </section>
+ <section class="footer-note"><h2>Evidence is not endorsement</h2><p>Expiry is calculated from the certificate validity and recheck date. Expired or disputed records cannot be presented as current. Even accepted evidence requires an independent publication approval and release review before a public claim could appear. None of these operator actions change the public catalogue or community directory.</p><p>Sources should be documented by their legitimate issuer and confirmed directly where necessary. A public link alone is not sufficient proof of halal certification.</p></section>
+</main>
+<dialog id="trust-history" aria-labelledby="trust-history-title"><div class="eyebrow">IMMUTABLE REVIEW HISTORY</div><h2 id="trust-history-title">Case history</h2><div id="trust-history-entries" class="history-entries"></div><button id="history-close" type="button">Close history</button></dialog>
+<dialog id="trust-confirm" aria-labelledby="trust-confirm-title" aria-describedby="trust-confirm-description"><form method="dialog"><div class="eyebrow">VERIFY A MATERIAL DECISION</div><h2 id="trust-confirm-title">Confirm review</h2><p id="trust-confirm-description"></p><div class="confirm-actions"><button type="submit" value="cancel">Cancel</button><button type="submit" value="confirm" class="approve">Confirm decision</button></div></form></dialog>
+</body></html>

@@ -39,3 +39,12 @@ Risks: (R1) visual packaging could be mistaken for certified products → concep
 - Accessibility UX expectations: WCAG 2.2 AA as project target for reviewed main journeys; test keyboard, focus order/trap, meaningful link text, error feedback, zoom and reduced motion. Current automated Chromium checks do not constitute AA certification.
 - Release evidence: exact-head FAST CI, independent STANDARD review, real Cloudflare preview plus D1/Turnstile acceptance for activated forms. Authoritative user approval for merge and publication.
 - Operator/role: manually authorized content editor in GitHub controls `hub/hub.json` and event records; no paid GitHub protected-branch assumption. Editing permissions are procedural until hardened. Staff portal deferred pending scoped auth and audit design.
+
+
+## TRUST-01 targeted risk profile
+
+- **Safety/claim accuracy:** critical. No self-attested public certification. No product or venue becomes halal-certified through software. Expired or disputed records are not presented as current; editor evidence and independent expert verification remain distinct.
+- **Security/privacy:** critical. Cloudflare Access JWT is verified server-side; role allowlists and anti-self-review rule; source links must be public HTTPS without credentials. Private certificate material and individuals' personal details are not permitted in this workflow. Data retention and withdrawal must be approved before activation.
+- **Auditability:** database triggers record submission, decision and dispute atomically, enforce immutable evidence and audit records. D1 staging integration tests and external auditor review pending.
+- **UX:** explicit confirmation, no silent state transition, readable error/empty states, private UI, mobile-first layouts, source and due dates visible; local real-browser smoke passing, formal WCAG audit pending.
+- **Deployment:** intentionally not configured. Final Cloudflare Access, D1 and Pages integration belongs to Hermes and remains a hard release gate.
