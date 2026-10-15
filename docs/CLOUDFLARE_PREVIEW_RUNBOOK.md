@@ -137,6 +137,10 @@ produces the same preview URLs without the app.
   minutes and retry.
 - Unauthenticated probes get a 302 to the login page: that is the protection
   working. Send service-token headers for scripted checks.
+- Unknown paths answered with the homepage: Cloudflare Pages treats a project
+  without a top-level `404.html` as a single-page application. `public/404.html`
+  restores a genuine 404 response with a branded page, and this branch carries
+  that file.
 - Preview URLs are `noindex` by design. SEO scoring applies only to an approved
   production domain.
 - `wrangler pages deploy` refuses a dirty working tree. Commit or clean first,
