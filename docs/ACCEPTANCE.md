@@ -27,3 +27,10 @@ Status: **candidate, not yet accepted**. Applies to exact branch SHA. Approval a
 ## Known limitations
 
 This is a **pre-commerce launch candidate**: no product ordering, inventory, pricing, shipping, email delivery, operator admin, search index, tracking analytics or certified halal claims. Assets are branded mockups. Signup endpoint will be unavailable until Cloudflare resources are configured. No acceptance check can substitute for actual human design and religious/food-safety verification.
+
+## Catalogue-extension checks (CAT-01 to CAT-06)
+
+- FAST: deterministic generator, unique product IDs, all corresponding WebP assets, 5 product routes, 3 curated-edit routes, relationships, no premature checkout and no advertised verification.
+- STANDARD: review live-format (locally rendered) desktop/tablet/mobile imagery, category filters, saved products, quick look, recipe imagery, detail pages and edit pages; no image/network failure or horizontal overflow. Test 320/390/768/1440 widths.
+- FULL: independent design review, production-equivalent Cloudflare Pages preview, actual browser keyboard and assistive-technology usability, provenance/right-to-use review, verified commercial product evidence before publication.
+- **No commerce activation** until individually approved SKU specifications, food-safety, packaging and halal sourcing evidence exist. All concept art remains illustrative even where generated mockups include unverified labels.

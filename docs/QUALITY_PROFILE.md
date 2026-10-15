@@ -18,3 +18,11 @@ Framework pin: `.dev/framework.lock`. Risk: production-facing marketing / limite
 Control mapping: governance/requirements/evidence/release/security/privacy/experience are **planned**; this profile does not assert ISO/NIST certification. AI-PROD: N/A (no LLM features). Multi-tenant controls: N/A. No exceptions authorized. Failure to obtain evidence means the related gate remains open.
 
 Risks: (R1) visual packaging could be mistaken for certified products → concept previews plus FAQs, human verification before commerce; (R2) unauthorized use of logos/artwork → owner approval; (R3) signup personal-data handling → D1/Turnstile fail-closed + privacy policy gate; (R4) promotional copy/inaccurate product claims → manual food safety, halal and regulatory review; (R5) full b64 image payload performance → optimize to WebP and revisit as native static assets when transport/build matures.
+
+
+## Catalogue trust and release delta
+
+- Product data owner must verify the provenance, identity, claim wording and rights for each production photograph and supply chain. Generated artwork is illustrative and may contain nonsensical or inaccurate details.
+- Unverified pack claims are flagged in-page as artwork only. This does not authorize those images for sale, printed packaging, official halal marketing or regulated food labelling.
+- No price/availability/inventory, order, payment, automatic marketing signup or customer credential is exposed by new catalogue pages.
+- Shared native components and static generated routes minimize runtime dependencies. Accessible responsive UI remains independently reviewable; passing scripted Chromium is not proof of WCAG conformance.

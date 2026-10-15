@@ -57,3 +57,16 @@ Establish a premium, inclusive Jamaican halal brand destination: discover produc
 ## 7. Human approval and progression
 
 The working site in the feature branch is a design-and-code candidate. Never merge or publish production by implication. Required progression: local checks → independent visual, mobile, accessibility and security review → Cloudflare preview smoke → human approval → main merge → production publication decision. A polished marketing video is created only from the accepted live candidate at handover.
+
+## 8. UX-first catalogue extension — H3-design candidate
+
+Implemented as a **design candidate, not commercial SKU activation**:
+
+- `CAT-01`: Source-controlled `catalog/catalog.json` for five initial concepts; generator validates IDs, category, linked art and related product integrity.
+- `CAT-02`: Five generated product story pages with product photography, usage ideas, relationships and explicit sourcing/certification unknowns; canonical-sounding links are local and do not suggest stock.
+- `CAT-03`: Three curated concept edits with standalone descriptive pages and product compositions; no invented prices/stock/bundles for purchase.
+- `CAT-04`: Recipe food photography for curry, jerk beef skewers and roasted vegetables, with concept packaging art saved as optimized WebP.
+- `CAT-05`: Shared native components and build templates for catalogue pages; no unnecessary React or e-commerce runtime. Watermelon UI patterns evaluated for possible later reuse, without installation.
+- `CAT-06`: Keep the existing waitlist fail-closed, editorial and trust language honest, and require later supplier/certifier, ingredient, label and food-safety signoff.
+
+**Status:** candidate validated in local automated checks; awaits independent visual/design and Cloudflare preview review. No business/food or deployment acceptance implied.
