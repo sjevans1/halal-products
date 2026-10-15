@@ -46,3 +46,12 @@ This is a **pre-commerce launch candidate**: no product ordering, inventory, pri
 | COMMERCE | supplier contracts, certifier evidence, approved food safety/labels, allergens/net weights and pricing, inventory, payments, fulfilment and returns | Deferred; no live sales promised |
 
 Unverified or out-of-date information must be corrected or explicitly shown as pending/source-listed. Failed/absent evidence is not acceptance. Passing native/browser simulations is **not** equivalent to genuine Cloudflare deployment, live Turnstile or real D1 storage proof.
+
+## HUB-09 operator/editorial acceptance
+
+| Tier | Gate | State |
+|---|---|---|
+| FAST | Node syntax, no JWT header spoofing, JWKS signature check, issuer/audience/time/email rejection, Origin/JSON/notes bounds, atomic audit requirement, operator noindex and static output boundaries | Tested in Node simulation |
+| STANDARD | Native `dialog` confirmation before any mutation, status navigation, queue rendering, clear errors, 1440/390/320 UI browser journeys, no overflow or JS errors, responsive focus/readability | Local Chromium simulated; independent WCAG review pending |
+| FULL | Live Cloudflare Access policy on `/operator/*` and `/api/operator/*`, real JWTs, actual D1 migration + transactional audit, external actor denies, real preview, CSRF/abuse, privacy/retention and rollback drill | **Outstanding** |
+| RELEASE | Owner approves branch merge separately from deploy; visitor suggestion intake and operator activation explicitly controlled, public publishing always via human-reviewed source-control change | **Not authorized** |

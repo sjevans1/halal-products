@@ -85,3 +85,11 @@ npx wrangler d1 execute tayyib-waitlist --remote --command="SELECT id,kind,title
 
 - Test local behavior with `npm run check` and, where Chromium/Playwright are available, `python browser-hub-check.py`. This is simulated Pages behavior; actual live Cloudflare preview and D1/Turnstile integration remain release gates.
 - See `docs/PLAN.md` section 9 and ADR-003 for future waves: independently verified food business records, content moderation UI, community event partnerships, supplier inventory, JMD checkout and wholesale services. Do not treat planned work as already operational.
+
+## Editorial operator candidate (HUB-09)
+
+A separate **unactivated** staff workspace now exists at `/operator/`, backed by `/api/operator/suggestions`. This allows authenticated, explicitly allowlisted staff to review a bounded queue of visitor-submitted suggestions **without granting any ability to publish or certify content**. Content publication still requires a reviewed change to `hub/hub.json` and deployment approval. The operator dashboard has no public navigation entry and is marked noindex; hiding the route is not the security boundary.
+
+See [`docs/OPERATOR_REVIEW_RUNBOOK.md`](docs/OPERATOR_REVIEW_RUNBOOK.md) and [`docs/decisions/ADR-004-operator-review-boundary.md`](docs/decisions/ADR-004-operator-review-boundary.md). Before activation, provision and test Cloudflare Zero Trust Access protection over both operator UI and API, `HUB_OPERATOR_TEAM_DOMAIN`, `HUB_OPERATOR_AUD`, `HUB_OPERATOR_EMAILS`, `HUB_OPERATOR_ACTIVE=true`, D1 `WAITLIST_DB` and reviewed migration `0003_operator_moderation.sql`. Independent privacy, rate limits and real Cloudflare integration remain required. Default is 503/deny. Never trust browser-supplied identities or enable the public suggestions API by implication.
+
+Local operator UI mock journeys: `python browser-operator-check.py`. Node security/transition tests are included in `npm run check`. Neither uses live Cloudflare credentials, Access or D1.

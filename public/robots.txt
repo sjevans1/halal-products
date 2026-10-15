@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /api/
 # Add sitemap after public domain approval.
+Disallow: /operator/
