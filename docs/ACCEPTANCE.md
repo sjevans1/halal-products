@@ -34,3 +34,15 @@ This is a **pre-commerce launch candidate**: no product ordering, inventory, pri
 - STANDARD: review live-format (locally rendered) desktop/tablet/mobile imagery, category filters, saved products, quick look, recipe imagery, detail pages and edit pages; no image/network failure or horizontal overflow. Test 320/390/768/1440 widths.
 - FULL: independent design review, production-equivalent Cloudflare Pages preview, actual browser keyboard and assistive-technology usability, provenance/right-to-use review, verified commercial product evidence before publication.
 - **No commerce activation** until individually approved SKU specifications, food-safety, packaging and halal sourcing evidence exist. All concept art remains illustrative even where generated mockups include unverified labels.
+
+## HUB Community Hub addition — acceptance matrix
+
+| Gate | Required proof | Current expectation |
+|---|---|---|
+| FAST-HUB | validated source-reference directory data; distinct status semantics; no false certified badges; Node syntax; API gate failure tests; deterministic generated pages | `npm run check` |
+| STANDARD-HUB | browser journeys 320/390/768/1440 (homepage, 6 hub pages, directory filters/no results, recipe serving controls, event empty state, disabled submissions), keyboard & focus plus content readability | `python browser-hub-check.py` + independent manual accessible review |
+| FULL-HUB | exact-head Cloudflare Pages branch preview using `npm run build`/`public`, real HTML/JS/CSS/image loading, privacy/headers review, independent religious-content and directory source checks, community participant walkthrough | Outstanding; cannot assert before deployed evidence |
+| ACTIVATION | source review by accountable editor, legal privacy controller/contact and retention approved, D1 migration, Turnstile hostname-bound live challenge, explicit `HUB_SUBMISSIONS_ACTIVE=true`, bounded abuse controls, moderation/withdrawal operations and rollback drill | Disabled until separately authorized |
+| COMMERCE | supplier contracts, certifier evidence, approved food safety/labels, allergens/net weights and pricing, inventory, payments, fulfilment and returns | Deferred; no live sales promised |
+
+Unverified or out-of-date information must be corrected or explicitly shown as pending/source-listed. Failed/absent evidence is not acceptance. Passing native/browser simulations is **not** equivalent to genuine Cloudflare deployment, live Turnstile or real D1 storage proof.

@@ -5,10 +5,10 @@
   "version": "0.1.0",
   "description": "UX-first Cloudflare Pages launch website for Tayyib Halal",
   "scripts": {
-    "check": "npm run build && node --check public/app.js && node --check public/catalog-data.js && node --check functions/api/config.js && node --check functions/api/subscribe.js && node --test tests/*.test.js",
+    "check": "npm run build && node --check public/app.js && node --check public/catalog-data.js && node --check public/hub.js && node --check public/hub-data.js && node --check functions/api/config.js && node --check functions/api/subscribe.js && node --check functions/api/hub-config.js && node --check functions/api/hub-suggest.js && node --test tests/*.test.js",
     "dev": "npx wrangler pages dev public --d1 WAITLIST_DB=tayyib-waitlist",
     "deploy": "echo 'Deploy via Cloudflare Pages Git integration; approval required' && exit 1",
-    "build": "node scripts/build-catalog.mjs"
+    "build": "node scripts/build-catalog.mjs && node scripts/build-hub.mjs"
   },
   "engines": {
     "node": ">=22"
