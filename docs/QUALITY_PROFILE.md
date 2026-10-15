@@ -48,3 +48,11 @@ Risks: (R1) visual packaging could be mistaken for certified products → concep
 - **Auditability:** database triggers record submission, decision and dispute atomically, enforce immutable evidence and audit records. D1 staging integration tests and external auditor review pending.
 - **UX:** explicit confirmation, no silent state transition, readable error/empty states, private UI, mobile-first layouts, source and due dates visible; local real-browser smoke passing, formal WCAG audit pending.
 - **Deployment:** intentionally not configured. Final Cloudflare Access, D1 and Pages integration belongs to Hermes and remains a hard release gate.
+
+
+## LEARN-01 educational safety profile
+
+- **Religious and source accuracy:** critical. Ingredient keywords only reveal evidence-gathering questions, not fatwas, certificates, product classifications or personal dietary advice. Independent Islamic and food certification review required before public indexing.
+- **Accessibility:** search with counts, native details, keyboard-use filters and checkboxes, responsive at 320px onward, copy feedback with an explicit unavailable fallback. External screen-reader and contrast assessment still needed.
+- **Privacy:** no photo upload, account, history, analytics or retained input. All guide content is static; checklist state is ephemeral.
+- **Evidence:** references Jamaica Halal Council's published general guidance, without claiming its endorsement or actual product assessment.
