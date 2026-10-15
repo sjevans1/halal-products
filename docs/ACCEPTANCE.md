@@ -67,3 +67,12 @@ Unverified or out-of-date information must be corrected or explicitly shown as p
 | PUBLICATION | Independent source/claim assessment, qualified food-safety/halal/religious signoff where relevant, human-approved content PR and production release decision | **No publication path in this package** |
 
 Internal `accepted` is never a halal accreditation, even while a certificate is valid. The case status is for internal evidence workflow only; `review_due` or expired `valid_until` causes a derived recheck flag without mutating or hiding audit history. A URL alone is not proof of the issuer or of current halal status.
+
+## LEARN-01 — Label-reading guide
+
+| Gate | Acceptance evidence |
+|---|---|
+| FAST | 14 distinct sourced topics, four validated categories, generated standalone page, source link and non-classification disclaimers; no checkout, tracking, invented certification or user upload |
+| STANDARD | Search, category filters, native question reveals, accessible status and checklist, honest no-results, copy fallback, 1440/768/390/320 browser rendering without JS errors or overflow |
+| FULL | Independently verify religious/food science wording, Arabic, accessibility/contrast, source rights and community comprehension; real Pages deploy smoke delegated to Hermes at final acceptance |
+| RELEASE | Human content-owner approval, verified source policy, no misleading binary product results or certifier endorsement, no public indexing before product/company legal review |

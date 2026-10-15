@@ -104,3 +104,12 @@ The next development package adds a **private**, Cloudflare Access-governed `/op
 - Review states, due dates, conflict detection, audit-history view and database-enforced triggers documented in `docs/TRUST_VERIFICATION_RUNBOOK.md` and ADR-005. Publication remains an independent human GitHub release decision.
 - Local validation: `npm run check` (includes real SQLite invariant assertions), `python3 browser-trust-check.py`, plus existing hub/operator/catalogue regression scripts. These are simulations: **no actual Cloudflare Access or live database has been configured**.
 - **Infrastructure handoff to Hermes only at final launch acceptance**. No Cloudflare preview, D1 migration or operator activation is authorized by this development-only candidate.
+
+## LEARN-01 — Ingredient & label reading room
+
+The Learning Centre now links to `/learn/ingredients/`, a 14-topic source-linked educational explainer with searchable categories, supplier questions and a five-part checklist. It intentionally does **not** classify an entire food product as halal from ingredient keywords.
+
+- Editorial source: `hub/ingredient-guide.json` (with Jamaica Halal Council published Halal Food General Guide cited).
+- Generated page: `public/learn/ingredients/index.html`, built by `scripts/build-ingredients.mjs`; assets: `public/ingredients.js`, `ingredients.css`, `ingredients-data.js`.
+- Browser regression: `python3 browser-ingredients-check.py` at 1440/768/390/320; native checks: `tests/ingredients.test.js` via `npm run check`.
+- Human expert/content review and Cloudflare deployment acceptance outstanding; see `docs/INGREDIENT_GUIDE_EDITORIAL_POLICY.md` and ADR-006.
