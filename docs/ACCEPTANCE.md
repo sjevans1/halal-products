@@ -19,7 +19,7 @@ Status: **candidate, not yet accepted**. Applies to exact branch SHA. Approval a
 ## FULL / activation
 
 - Cloudflare Pages branch preview successfully served over HTTPS. Validate `_headers`, static routes, 404 behavior, Pages Functions and build output `public`.
-- If activating signups, D1 migration applied, scoped D1 binding and server-side Turnstile secret configured; test real successful submission, invalid email, duplicate email, missing consent, invalid/reused challenge token, and DB outage. Verify unsubscribe and retention process. Consent/privacy/business contact approved.
+- If activating signups, D1 migration applied, scoped D1 binding and server-side Turnstile secret configured, and `WAITLIST_ACTIVE=true` set only after approval; test real successful submission, invalid email, duplicate email, missing consent, invalid/reused challenge token, and DB outage. Verify unsubscribe and retention process. Consent/privacy/business contact approved.
 - Privacy/security review, basic Lighthouse mobile + accessibility audit and product-owner walkthrough recorded at exact candidate SHA; no unsupported compliance claims.
 - Launch content approved: imagery rights, halal certificates, product specs and all branded contact URLs verified. No checkout until commerce phase.
 - Human authorizes merge; production deploy is a separate explicit gate. Keep records of git SHA, checks, previews, decisions, open exceptions.

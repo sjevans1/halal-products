@@ -1,6 +1,6 @@
 const error=(message,status)=>Response.json({ok:false,error:message},{status,headers:{'Cache-Control':'no-store'}});
 export async function onRequestPost({request,env}) {
-  if(!env.WAITLIST_DB||!env.TURNSTILE_SECRET||!env.TURNSTILE_SITE_KEY)return error('Registrations are not open yet.',503);
+  if(env.WAITLIST_ACTIVE!=='true'||!env.WAITLIST_DB||!env.TURNSTILE_SECRET||!env.TURNSTILE_SITE_KEY)return error('Registrations are not open yet.',503);
   if((request.headers.get('content-type')||'').split(';')[0].trim().toLowerCase()!=='application/json')return error('Invalid content type.',415);
   const length=Number(request.headers.get('content-length')||0);if(length>4096)return error('Request too large.',413);
   let data;try{const body=await request.text();if(body.length>4096)return error('Request too large.',413);data=JSON.parse(body)}catch{return error('Invalid request.',400)}

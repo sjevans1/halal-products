@@ -30,7 +30,7 @@ Establish a premium, inclusive Jamaican halal brand destination: discover produc
 
 - Standalone publicly accessible marketing site. Not OpenJM multi-tenant SaaS. Three-plane model: **not applicable**; no provider/customer admin UI invented.
 - Static HTML, CSS, vanilla JavaScript shipped from `public/` to Cloudflare Pages, no client framework/runtime, no payment provider, no cookies/tracking pixels. All brand photo assets included as base64 text payloads (binary asset transport can be introduced later).
-- Cloudflare Pages Functions under `functions/api/*` handle signup status and actual email submission. **Fail-closed** unless D1 database `WAITLIST_DB`, `TURNSTILE_SITE_KEY` and secret `TURNSTILE_SECRET` exist. Records consist of email and timestamps, never password/payment details. Prepared SQL prevents injection; server verifies Turnstile token.
+- Cloudflare Pages Functions under `functions/api/*` handle signup status and actual email submission. **Fail-closed** unless an operator deliberately sets `WAITLIST_ACTIVE=true` alongside D1 database `WAITLIST_DB`, `TURNSTILE_SITE_KEY` and secret `TURNSTILE_SECRET`. Records consist of email and timestamps, never password/payment details. Prepared SQL prevents injection; server verifies Turnstile token.
 - Private business decisions: no brand domain, verified suppliers/certifiers, actual retailer information, payment terms, fulfillment coverage, pricing, or public support contact yet. All blocked from release claims.
 - Owner must approve the privacy notice, retention, responsible controller/contact and unsubscribe workflow **before signup activation**. Site may preview with signup disabled.
 
