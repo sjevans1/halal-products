@@ -82,3 +82,22 @@ test('static output excludes server-side and planning data',()=>{
  for(const name of ['functions','migrations','docs','.dev','tests','catalog','scripts']) assert.ok(!files.includes(name));
  assert.doesNotMatch(script,/stripe|paymentIntent|checkout\.sessions/i);
 });
+
+
+test('premium Jamaica-specific copy avoids competitor brand wording and em dashes', () => {
+  assert.ok(catalog.bundles.some(b => b.id === 'grill-of-the-island' && b.name === 'Grill of the Island'));
+  assert.ok(existsSync(new URL('public/collections/grill-of-the-island/index.html', root)));
+  assert.ok(!existsSync(new URL('public/collections/island-grill/index.html', root)));
+  const scan = dir => {
+    for(const entry of readdirSync(dir, {withFileTypes: true})) {
+      const path = join(dir,entry.name);
+      if(entry.isDirectory()) scan(path);
+      else if(/\.(html|js|json)$/.test(entry.name)) {
+        const content=readFileSync(path,'utf8');
+        assert.ok(!content.includes('—'), `em dash in public copy: ${path}`);
+        assert.ok(!/island[ -]grill/i.test(content), `conflicting local business term in public copy: ${path}`);
+      }
+    }
+  };
+  scan(new URL('public/',root).pathname);
+});

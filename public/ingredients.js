@@ -10,9 +10,9 @@
  input.addEventListener('input',apply);
  all('[data-ingredient-filter]').forEach(button=>button.addEventListener('click',()=>{active=button.dataset.ingredientFilter;all('[data-ingredient-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===button)));apply()}));
  const checks=all('[data-ingredient-check]');const progress=$('#check-progress');
- checks.forEach(c=>c.addEventListener('change',()=>{progress.textContent=`${checks.filter(x=>x.checked).length} of ${checks.length} questions considered — this is not certification.`}));
+ checks.forEach(c=>c.addEventListener('change',()=>{progress.textContent=`${checks.filter(x=>x.checked).length} of ${checks.length} questions considered. This is not certification.`}));
  $('#copy-supplier-questions').addEventListener('click',async()=>{
-  const questions=(window.TAYYIB_INGREDIENTS?.questions||[]);const text='Tayyib Halal — questions to ask suppliers (not certification)\n'+questions.map((q,i)=>`${i+1}. ${q}`).join('\n');
+  const questions=(window.TAYYIB_INGREDIENTS?.questions||[]);const text='Tayyib Halal | questions to ask suppliers (not certification)\n'+questions.map((q,i)=>`${i+1}. ${q}`).join('\n');
   try{if(!navigator.clipboard?.writeText)throw Error('Copy unavailable');await navigator.clipboard.writeText(text);$('#copy-message').textContent='Supplier questions copied. Check the issuer and source.'}
   catch{$('#copy-message').textContent='Automatic copying is unavailable. You can review and copy the questions from each topic above.'}
  });
