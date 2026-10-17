@@ -107,3 +107,7 @@ No status of an internal proposal is proof that a company, mosque, product or re
 - FAST: approved existing ID; valid short-lived signed Access application identity; bounded source and note; independent operator role; no staff-audience reuse by representative; D1 grant revocation and audit immutability; internal review never publishes.
 - STANDARD: operator grant/revocation requires explicit confirmation, representative needs one clear update form, no JS error or horizontal overflow at 320/390/768/1440, and error/disabled states stay legible.
 - FULL: Cloudflare real Access policy protects *both* staff and representative HTML + APIs; deployed migrations 0001–0008, record minimization/privacy, revocation test, independent human organizational authority verification, WCAG keyboard/screen-reader walk-through, source and halal review. **Not yet accepted; reserved for Hermes at final stage.**
+
+## DISC-01: Jamaica-first discovery candidate
+
+Native: verify published parish/category counts, browse intents, no invented restaurants, source-status integrity and controlled URL state. Browser: 1440/768/390/320 filter chips, keyboard-accessible clear, share fallback, source labelling and honest empty states. Required pre-release: independent Jamaica-based usability feedback, mobile/assistive-technology spot checks, and Hermes verification against an authorized sanitized public client-review deployment. No verified place, certified business, geolocation, or production approval is inferred.

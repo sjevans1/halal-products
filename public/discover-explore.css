@@ -1,0 +1,34 @@
+/* DISC-01: visitor-first Jamaica discovery. No inferred geolocation or unsupported badges. */
+.discover-wayfinder{margin:0 0 42px;background:#f6f4ec;border:1px solid #e2dfd4;padding:clamp(22px,3.5vw,40px)}
+.discover-overline{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#47694d}
+.discover-wayfinder h3{font:400 clamp(30px,3vw,45px)/1.14 var(--serif,Georgia,serif);color:#193d2c;letter-spacing:-.025em;margin:12px 0 8px}
+.discover-intro{max-width:660px;font-size:14px;line-height:1.75;color:#506658;margin:0 0 25px}
+.discover-intents{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.discover-intent{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:23px;background:#fff;border:1px solid #d9ddd3;text-decoration:none!important;min-height:183px;transition:border-color .16s,background .16s}
+.discover-intent:hover{background:#f9fbf6;border-color:#5b8269}.discover-intent:focus-visible,.discover-parish:focus-visible,.discover-tool:focus-visible{outline:3px solid #a68347;outline-offset:3px}
+.discover-intent-icon{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#edf2e9;font-size:20px;color:#20523a}
+.discover-intent strong{font:400 23px/1.15 var(--serif,Georgia,serif);color:#1c4230}
+.discover-intent span:not(.discover-intent-icon){font-size:12px;line-height:1.55;color:#526a5a}
+.discover-intent em{font-style:normal;font-size:11px;font-weight:750;color:#235d42;margin-top:auto}
+.discover-parishes{margin:30px 0 18px}
+.discover-parishes-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:6px 16px;margin-bottom:13px}
+.discover-parishes-head h3{font:400 clamp(26px,2.4vw,36px)/1.2 var(--serif,Georgia,serif);color:#163a2b;margin:0}
+.discover-parishes-head p{font-size:12px;color:#52665a;margin:0}
+.discover-parish-list{display:flex;flex-wrap:wrap;gap:9px}
+.discover-parish{border:1px solid #c9d4c9;background:#fff;color:#244938;cursor:pointer;display:inline-flex;align-items:center;gap:9px;min-height:44px;font:750 12px var(--sans,Arial,sans-serif);padding:10px 15px;white-space:normal;text-align:left}
+.discover-parish small{font-size:11px;font-weight:750;color:#536e5b;background:#edf1e9;padding:3px 6px;border-radius:20px}
+.discover-parish[aria-pressed="true"]{background:#1b5038;border-color:#1b5038;color:#fff}
+.discover-parish[aria-pressed="true"] small{background:#e5d9bc;color:#21422f}
+.discover-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:4px 0 15px}
+.discover-tool{border:1px solid #9db5a4;background:transparent;color:#1b4c35;cursor:pointer;padding:11px 15px;font:750 12px var(--sans,Arial,sans-serif);min-height:44px}
+.discover-tool:hover{background:#e7eee6}.discover-share-status{font-size:12px;color:#32513e;line-height:1.6;overflow-wrap:anywhere}
+.discover-guide-note{display:flex;gap:15px;align-items:flex-start;border-top:1px solid #d7dbd2;padding-top:21px;margin-top:18px}
+.discover-guide-note>span{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:50%;background:#e9ede2;color:#1e583c;font-size:21px}
+.discover-guide-note strong{font-size:13px;color:#234632}.discover-guide-note p{font-size:12px;line-height:1.8;color:#536757;margin:5px 0 0}
+.discover-guide-note a{color:#235c42;text-decoration:underline;text-underline-offset:3px}
+.discover-zero{margin:0 0 22px;padding:14px 19px;background:#e9eee7;color:#2c4d36;font-size:12px;line-height:1.8;border-left:3px solid #548265}
+.discover-zero strong{color:#163d2b}
+.discover-zero a{color:#164b31;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.discover-share-fallback{display:block;width:100%;max-width:520px;margin-top:8px;padding:10px 12px;background:#fff;border:1px solid #aac0ad;color:#19442d;font:12px var(--sans,Arial,sans-serif)}
+@media(max-width:760px){.discover-intents{grid-template-columns:1fr;gap:10px}.discover-intent{min-height:0;padding:18px 20px;gap:6px}.discover-intent-icon{width:32px;height:32px}.discover-intent strong{font-size:24px}.discover-parish-list{gap:8px}.discover-parish{padding:8px 12px}}
+@media(max-width:400px){.discover-wayfinder{padding:19px 16px}.discover-parish{font-size:11px}.discover-parishes-head h3{font-size:27px}.discover-guide-note{gap:10px}}
