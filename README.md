@@ -142,3 +142,7 @@ The public directory now has 15 generated `/places/<listing-id>/` pages. Each sh
 ## Community stewardship (COMM-02 candidate)
 
 The next review wave adds `/steward/` for separately approved, listing-specific representatives and `/operator/stewards/` for independent staff grant/revocation, with separate Cloudflare Access audiences (configured only at final Hermes deployment). D1 migrations 0007 and 0008 are required later. **No automatic self-claim, halal verification or public publishing occurs.** See `docs/STEWARD_ACCESS_RUNBOOK.md` and ADR-010. Test locally using `npm run check` and `python browser-steward-access-check.py`.
+
+## DISC-01: Jamaica-first parish discovery
+
+The Find Halal Jamaica page now provides visitor-oriented journeys for mosques, community connections and halal learning; source-derived parish shortcuts, honest zero-verified-dining messaging, clearable search filters and copyable search links. Static assets are generated from approved public-source listings only, never guessed maps, service times or certification. See `docs/JAMAICA_DISCOVERY_UX.md` for the UX and acceptance contract. No public client-review deployment is authorized by this development PR.
