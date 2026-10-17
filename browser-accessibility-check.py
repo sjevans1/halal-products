@@ -18,10 +18,11 @@ def html(route):
     return text
 
 checks={
- '/': ['.eyebrow.dark','.product-card p','.product-meta','.edit-label','.trust-grid small','.footer-bottom','.home-hub-feature .home-hub-label','.home-hub-card:not(.home-hub-feature) .home-hub-label'],
+ '/': ['.eyebrow.dark','.product-card p','.product-meta','.edit-label','.trust-grid small','.footer-bottom','.home-hub-feature .home-hub-label','.home-hub-feature p','.home-hub-card:not(.home-hub-feature) .home-hub-label'],
  '/discover/':['.eyebrow.dark','.directory-card p','.directory-card footer span','.directory-count','.footer-bottom'],
  '/learn/':['.eyebrow.dark','.hub-guide-card .guide-chip','.hub-guide-card p','.footer-bottom'],
  '/products/beef-cubes/':['.detail-tagline','.breadcrumb','.eyebrow.dark','.footer-bottom'],
+ '/partners/':['.hub-trust-panel .hub-kicker'],
 }
 # Samples avoid dark gradient mastheads and images, whose rendered backgrounds cannot
 # be measured correctly from transparent computed background-color alone.

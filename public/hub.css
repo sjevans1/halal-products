@@ -32,3 +32,7 @@
 .ingredient-hub-feature span{font-size:11px}
 .directory-tag,.directory-card footer span,.guide-chip{font-size:11px}
 .directory-card footer a,.directory-actions a{display:inline-flex;align-items:center;min-height:44px}
+/* A11Y-01 follow-up: protect dark-card copy from light-surface overrides. */
+.home-hub-feature p{color:#d9e6dc}
+.hub-trust-panel .hub-kicker{color:var(--gold-on-forest)}
+.steward-process li span{color:var(--copy-ink)}

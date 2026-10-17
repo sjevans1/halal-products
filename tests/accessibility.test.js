@@ -35,6 +35,8 @@ test('design tokens pass WCAG AA 4.5:1 for ordinary text on approved light/dark 
 
 test('light surface labels and background-specific gold remain separate', () => {
   assert.match(hub, /\.home-hub-feature \.home-hub-label\{color:var\(--gold-on-forest\)\}/);
+  assert.match(hub, /\.home-hub-feature p\{color:#d9e6dc\}/);
+  assert.match(hub, /\.hub-trust-panel \.hub-kicker\{color:var\(--gold-on-forest\)\}/);
   assert.match(hub, /\.hub-mast \.hub-kicker\{color:var\(--gold-on-forest\)\}/);
   assert.match(hub, /\.directory-card p,[\s\S]*?color:var\(--copy-ink\)/);
   assert.match(styles, /\.eyebrow\.dark,[^\n]*\{color:var\(--gold-ink\)\}/);

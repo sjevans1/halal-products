@@ -48,3 +48,5 @@
 @media(max-width:950px){.icon-button,.mobile-menu-toggle{min-width:44px;min-height:44px}.mobile-nav a{min-height:44px;display:flex;align-items:center}}
 /* Preserve three usable 44px header actions without squeezing the 320px viewport. */
 @media(max-width:390px){.nav-shell{gap:7px}.logo{gap:4px}.logo-mark{width:31px;height:31px;flex:0 0 31px}.logo-mark span{font-size:12px}.logo-wordmark strong{font-size:13px;letter-spacing:0}.logo-wordmark small{font-size:7px;letter-spacing:1.3px}.nav-actions{gap:0}}
+/* A11Y-01 follow-up: FAQ body text is normal copy, not decorative muted ink. */
+.faq-layout>div:first-child p,.faq-list details p{color:var(--copy-ink)}
