@@ -32,3 +32,7 @@
 .discover-share-fallback{display:block;width:100%;max-width:520px;margin-top:8px;padding:10px 12px;background:#fff;border:1px solid #aac0ad;color:#19442d;font:12px var(--sans,Arial,sans-serif)}
 @media(max-width:760px){.discover-intents{grid-template-columns:1fr;gap:10px}.discover-intent{min-height:0;padding:18px 20px;gap:6px}.discover-intent-icon{width:32px;height:32px}.discover-intent strong{font-size:24px}.discover-parish-list{gap:8px}.discover-parish{padding:8px 12px}}
 @media(max-width:400px){.discover-wayfinder{padding:19px 16px}.discover-parish{font-size:11px}.discover-parishes-head h3{font-size:27px}.discover-guide-note{gap:10px}}
+/* A11Y-01 | Controls and parish counts remain legible on light card surfaces. */
+.discover-intent span:not(.discover-intent-icon),.discover-parishes-head p,
+.discover-parish small,.discover-guide-note p{color:#435c4c}
+.discover-overline{color:#325b3b}

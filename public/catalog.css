@@ -5,3 +5,7 @@
 @media(max-width:480px){.detail-art,.bundle-art{min-height:340px}.detail-copy h1,.bundle-hero h1{font-size:47px}.detail-related-grid{grid-template-columns:1fr}.breadcrumb{padding-top:18px}.detail-copy .button{width:100%}.bundle-image{top:18%}}
 .detail-mobile-links{display:none}
 @media(max-width:950px){.detail-mobile-links{display:flex;gap:16px;align-items:center;justify-content:space-between;overflow-x:auto;padding:13px max(20px,calc((100% - 1200px)/2));background:#f2eee3;border-top:1px solid #ddd4c3}.detail-mobile-links a{font-size:11px;font-weight:750;white-space:nowrap;color:#30513d}}
+/* A11Y-01 | Details need a readable hierarchy on ivory and sand. */
+.breadcrumb{color:#4c604f;font-size:12px}
+.detail-tagline{color:#6b4d2f!important}
+.detail-note{color:#4f6151!important}

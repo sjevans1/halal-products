@@ -111,3 +111,7 @@ No status of an internal proposal is proof that a company, mosque, product or re
 ## DISC-01: Jamaica-first discovery candidate
 
 Native: verify published parish/category counts, browse intents, no invented restaurants, source-status integrity and controlled URL state. Browser: 1440/768/390/320 filter chips, keyboard-accessible clear, share fallback, source labelling and honest empty states. Required pre-release: independent Jamaica-based usability feedback, mobile/assistive-technology spot checks, and Hermes verification against an authorized sanitized public client-review deployment. No verified place, certified business, geolocation, or production approval is inferred.
+
+## A11Y-01 — Premium UX readability acceptance
+
+Acceptance gates: token tests, measured Chromium text contrast (4.5:1), keyboard focus, menu semantics, reduced motion, 320/390/1440 horizontal overflow checks, existing regression suites and independent visual review. A live Cloudflare accessibility sweep and assistive-technology participant review are pending. Do not assert WCAG certification on test counts alone.

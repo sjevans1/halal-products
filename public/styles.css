@@ -28,3 +28,25 @@
 
 /* Shared navigation breathing room for Community Hub */
 @media(min-width:951px) and (max-width:1270px){.desktop-nav{gap:17px}.desktop-nav a{font-size:10px}.nav-actions{gap:7px}}
+/* A11Y-01 | Contrast and focus are semantic design tokens, not a brand re-skin.
+   Gold stays decorative on cream; readable bronze is used for small text. */
+:root{--gold-ink:#70532f;--copy-ink:#4c604f;--gold-on-forest:#e6c88b}
+.eyebrow.dark,.edit-label,.search-shell label{color:var(--gold-ink)}
+.hero-side-note,.image-caption,.philosophy-image-caption{color:#4b5c4d}
+.trust-grid small,.section-heading p,.product-card p,.edit-card p,.footer-brand p,.footer-links a,.footer-placeholder,.footer-bottom,.saved-shell>p{color:var(--copy-ink)}
+.collection-note small,.product-meta,.recipe-text .recipe-content>span:first-child{color:#68502e}
+.section-heading h2 em,.philosophy h2 em,.faq h2 em,.saved-shell h2 em,.curated .section-heading h2 em{color:var(--gold-ink)}
+.footer-links a:hover,.product-quick,.saved-item button{color:#654b2e}
+.modal-disclaimer{color:#526253!important}
+.trust-icon{color:#74572f}
+.home-hub .eyebrow.dark{color:var(--gold-ink)}
+.product-meta,.edit-label,.collection-note small,.search-shell label{font-size:11px}
+.footer-bottom{font-size:11px}
+.product-card p,.edit-card p{font-size:13px}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid #84601f;outline-offset:3px}
+:where(.hero-left,.hub-mast,.join-section,.guide) :is(a,button,input,select,textarea,summary):focus-visible{outline-color:#f4d69b}
+@media(max-width:950px){.icon-button,.mobile-menu-toggle{min-width:44px;min-height:44px}.mobile-nav a{min-height:44px;display:flex;align-items:center}}
+/* Preserve three usable 44px header actions without squeezing the 320px viewport. */
+@media(max-width:390px){.nav-shell{gap:7px}.logo{gap:4px}.logo-mark{width:31px;height:31px;flex:0 0 31px}.logo-mark span{font-size:12px}.logo-wordmark strong{font-size:13px;letter-spacing:0}.logo-wordmark small{font-size:7px;letter-spacing:1.3px}.nav-actions{gap:0}}
+/* A11Y-01 follow-up: FAQ body text is normal copy, not decorative muted ink. */
+.faq-layout>div:first-child p,.faq-list details p{color:var(--copy-ink)}
