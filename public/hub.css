@@ -18,3 +18,17 @@
 .directory-actions .directory-detail-link{background:#1d5039;color:#fff;padding:10px 13px;text-decoration:none}
 .directory-actions .directory-detail-link:hover{background:#143b2a}
 .directory-actions a:focus-visible{outline:3px solid #c09e60;outline-offset:4px}
+/* A11Y-01 | Readable Jamaica-first directory and learning labels. */
+.hub-kicker,.guide-chip,.ingredient-hub-feature span{color:var(--gold-ink)}
+.hub-mast .hub-kicker{color:var(--gold-on-forest)}
+.hub-heading p,.hub-community-split p,.directory-card p,.directory-count,.directory-card footer span,
+.directory-empty p,.events-empty p,.hub-feature-card p,.hub-guide-card p,.hub-recipe p,
+.ingredient-hub-feature p,.hub-legend p,.hub-recipe-caution{color:var(--copy-ink)}
+.hub-card-symbol,.directory-location:before{color:#74572f}
+.home-hub-label{color:var(--gold-ink);font-size:11px}
+.home-hub-feature .home-hub-label{color:var(--gold-on-forest)}
+.home-hub-card p,.home-hub-disclaimer{color:#425a49;font-size:13px}
+.hub-guide-card .guide-chip,.hub-recipe .guide-chip{color:var(--gold-ink)}
+.ingredient-hub-feature span{font-size:11px}
+.directory-tag,.directory-card footer span,.guide-chip{font-size:11px}
+.directory-card footer a,.directory-actions a{display:inline-flex;align-items:center;min-height:44px}

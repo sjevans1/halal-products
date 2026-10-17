@@ -80,3 +80,7 @@ Primary measure: a person in Jamaica can discover a source-listed venue and unde
 
 
 COMM-02 evidence: native negative identity/scope/date tests, real SQLite grant/revocation/proposal trigger tests and four-size browser journeys; third-party live security/identity and accessibility acceptance pending, no commerce.
+
+## A11Y-01 — Measured public contrast and keyboard gate
+
+Token-level WCAG AA normal-text colour ratios enforced in Node; 63 representative rendered-light-surface checks, mobile 44px navigation touch targets, focus, reduced motion and responsive review enforced by local Chromium. No relaxation of original security, content or merge gates.

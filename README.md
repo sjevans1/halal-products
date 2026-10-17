@@ -146,3 +146,7 @@ The next review wave adds `/steward/` for separately approved, listing-specific 
 ## DISC-01: Jamaica-first parish discovery
 
 The Find Halal Jamaica page now provides visitor-oriented journeys for mosques, community connections and halal learning; source-derived parish shortcuts, honest zero-verified-dining messaging, clearable search filters and copyable search links. Static assets are generated from approved public-source listings only, never guessed maps, service times or certification. See `docs/JAMAICA_DISCOVERY_UX.md` for the UX and acceptance contract. No public client-review deployment is authorized by this development PR.
+
+## A11Y-01 — Premium public accessibility refinement
+
+Shared CSS readability tokens and narrow-mobile header fixes improve the public visitor experience without activation of private systems. See `docs/PREMIUM_UX_ACCESSIBILITY.md` and `browser-accessibility-check.py` for measurement scope. Public client-review publishing remains a separate Hermes operation.

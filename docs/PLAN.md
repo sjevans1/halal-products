@@ -233,3 +233,7 @@ No positive halal claim, certification, named business verification, product ava
 - See `docs/STEWARD_ACCESS_RUNBOOK.md` and ADR-010. Cloudflare/D1/Access activation intentionally deferred to Hermes after independent review.
 - Quality contract: negative JWT audience and forged identity, invalid scope and expiry, revocation, no auto-publication, real SQLite triggers, mobile browser journeys.
 - Future: verified cross-organization delegates, capability-specific invited roles, supplier onboarding and commercial accounts only after actual operating arrangements are confirmed.
+
+## A11Y-01 — Readable Jamaica-first public UX
+
+Improve the legibility and reachability of labels, descriptions, product metadata, directory pages and mobile header actions before increasing feature complexity. Use real Jamaican mobile-user review before release.
