@@ -19,6 +19,8 @@ with sync_playwright() as p:
         errors=[]
         page.on('pageerror',lambda error:errors.append(str(error)))
         page.set_content(markup(),wait_until='load')
+        # Capture clean initial state before focus moves to the checklist.
+        page.screenshot(path=str(Path(__file__).parent/f'preview-events-{label}.png'),full_page=True)
         assert page.get_by_role('heading',name='No approved upcoming events yet.').count()==1
         assert page.locator('#events-controls').count()==0
         assert page.locator('[data-ramadan-step]').count()==4
@@ -32,9 +34,6 @@ with sync_playwright() as p:
         assert page.locator('a[href="/contribute/?intent=event"]').count() == 1
         assert not page.evaluate('document.documentElement.scrollWidth > window.innerWidth'), f'{label}: horizontal overflow'
         assert not errors,(label,errors)
-        page.evaluate('window.scrollTo(0,0)')
-        page.wait_for_timeout(150)
-        page.screenshot(path=str(Path(__file__).parent/f'preview-events-{label}.png'),full_page=True)
         print(label,'event empty state + Ramadan checklist PASS')
         page.close()
     # A synthetic, non-published browser fixture exercises controls for a future approved-event state.
