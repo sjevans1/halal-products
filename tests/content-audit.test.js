@@ -27,7 +27,7 @@ test('expired certificate claim, future source dates and fake event approval blo
  x.hub.listings[0].halalStatus='not-applicable';delete x.hub.listings[0].certification;x.hub.listings[0].sourceCheckedAt='2027-01-01';
  assert.ok(auditContent(x).blocking.some(e=>e.includes('future')));
  x.hub.listings[0].sourceCheckedAt='2026-10-15';x.hub.events.push({id:'invented',title:'Unapproved party',sourceUrl:'https://example.org',date:'2027-01-01',approved:false});
- assert.ok(auditContent(x).blocking.some(e=>e.includes('Event lacks approval')));
+ assert.ok(auditContent(x).blocking.some(e=>e.includes('Event publication rejected')));
 });
 test('the public directory makes no independent verification or source freshness claims',()=>{
  const app=readFileSync(new URL('../public/hub.js',import.meta.url),'utf8');

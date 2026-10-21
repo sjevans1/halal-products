@@ -1,6 +1,7 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {validatePublicEvents} from './event-policy.mjs';
 const root=new URL('../',import.meta.url),read=name=>JSON.parse(readFileSync(new URL(name,root),'utf8'));
 export function inspectSourceDate(checked,today){
  if(typeof checked!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(checked)||typeof today!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(today))throw Error('Source date must be YYYY-MM-DD');
@@ -26,7 +27,7 @@ export function auditContent({hub,ingredients,catalog,today}){
    if(!cert||!sourceOK(cert.evidenceUrl)||!cert.certifier||!cert.scope||!cert.expiresAt||cert.expiresAt<today)report.blocking.push(`Expired or unsupported certification claim: ${l.id}`);
   }
  }
- for(const e of hub.events){if(e.approved!==true||!sourceOK(e.sourceUrl)||!e.title||!e.date)report.blocking.push(`Event lacks approval or source: ${e.id||'unknown'}`)}
+ try{validatePublicEvents(hub.events,today)}catch(err){report.blocking.push(`Event publication rejected: ${err.message}`)}
  for(const g of hub.guides){if(!Array.isArray(g.sources)||!g.sources.length||!g.sources.every(x=>sourceOK(x.url)))report.blocking.push(`Guide missing reliable sources: ${g.id}`)}
  if(!sourceOK(ingredients.reference.url))report.blocking.push('Ingredient guide is missing published source');
  if(catalog.products.some(p=>!p.details?.some(d=>/not yet verified|not verified|required|to be confirmed|awaiting/i.test(d))))report.blocking.push('Product concept missing honest verification warning');

@@ -115,3 +115,10 @@ Native: verify published parish/category counts, browse intents, no invented res
 ## A11Y-01 — Premium UX readability acceptance
 
 Acceptance gates: token tests, measured Chromium text contrast (4.5:1), keyboard focus, menu semantics, reduced motion, 320/390/1440 horizontal overflow checks, existing regression suites and independent visual review. A live Cloudflare accessibility sweep and assistive-technology participant review are pending. Do not assert WCAG certification on test counts alone.
+
+### EVENT-01 scoped acceptance
+
+- Check generated `/events/` has zero fictional events, explicit source/approval notice and four-step optional preparation checklist.
+- Verify event-publication model and source audit reject missing approval, uncertain date/offset, private sources, duplicate IDs and reversed times. Expired events must not appear in upcoming results.
+- Verify four breakpoints through `browser-events-check.py`, including reset/feedback, no horizontal scroll or console errors. All previous native/SQLite/content-audit tests and exact-head GitHub CI must remain green.
+- Public client-review release, live submissions, halal certification and user identity features are strictly out of scope.
