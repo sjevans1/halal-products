@@ -32,7 +32,31 @@ with sync_playwright() as p:
         assert page.locator('a[href="/contribute/?intent=event"]').count() == 1
         assert not page.evaluate('document.documentElement.scrollWidth > window.innerWidth'), f'{label}: horizontal overflow'
         assert not errors,(label,errors)
+        page.evaluate('window.scrollTo(0,0)')
+        page.wait_for_timeout(150)
         page.screenshot(path=str(Path(__file__).parent/f'preview-events-{label}.png'),full_page=True)
         print(label,'event empty state + Ramadan checklist PASS')
         page.close()
+    # A synthetic, non-published browser fixture exercises controls for a future approved-event state.
+    # Fictional content must never enter hub/hub.json or a public build.
+    demo = markup()
+    controls = '<div id="events-controls"><label>Parish<select id="events-parish"><option value="all">All</option><option value="Kingston">Kingston</option><option value="St. Ann">St. Ann</option></select></label><label>Type<select id="events-kind"><option value="all">All</option><option value="learning">Learning</option><option value="charity">Charity</option></select></label><button id="events-reset">Clear filters</button></div><p id="events-count"></p><div id="events-no-match" class="events-no-match" hidden>No matching events</div>'
+    future = '<article data-event-id="fixture-one" data-parish="Kingston" data-kind="learning" data-ends-at="2099-01-01T15:00:00-05:00">Fixture A</article><article data-event-id="fixture-two" data-parish="St. Ann" data-kind="charity" data-ends-at="2099-02-01T15:00:00-05:00">Fixture B</article>'
+    demo = demo.replace('<div id="event-list" class="events-grid">', controls+'<div id="event-list" class="events-grid">'+future, 1)
+    demo_page=browser.new_page()
+    failures=[]
+    demo_page.on('pageerror', lambda err: failures.append(str(err)))
+    demo_page.set_content(demo,wait_until='load')
+    assert demo_page.locator('#events-count').inner_text() == '2 of 2 upcoming organizer-sourced events'
+    demo_page.select_option('#events-parish','Kingston')
+    assert demo_page.locator('[data-event-id="fixture-one"]').is_visible()
+    assert demo_page.locator('[data-event-id="fixture-two"]').is_hidden()
+    demo_page.select_option('#events-kind','charity')
+    assert demo_page.locator('[data-event-id="fixture-one"]').is_hidden()
+    assert demo_page.locator('#events-no-match').is_visible()
+    demo_page.locator('#events-reset').click()
+    assert demo_page.locator('#events-count').inner_text() == '2 of 2 upcoming organizer-sourced events'
+    assert not failures, failures
+    print('Synthetic unpublished future-event filtering PASS')
+    demo_page.close()
     browser.close()
