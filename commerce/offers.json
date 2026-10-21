@@ -1,0 +1,12 @@
+{
+  "edition": "2026-10-21",
+  "currency": "JMD",
+  "stage": "concept-only",
+  "items": [
+    { "id": "beef-cubes", "status": "concept", "availability": "unconfirmed", "priceJmd": null, "packSize": null, "halalEvidence": "unverified" },
+    { "id": "ground-beef", "status": "concept", "availability": "unconfirmed", "priceJmd": null, "packSize": null, "halalEvidence": "unverified" },
+    { "id": "jerk-sausages", "status": "concept", "availability": "unconfirmed", "priceJmd": null, "packSize": null, "halalEvidence": "unverified" },
+    { "id": "qaddid", "status": "concept", "availability": "unconfirmed", "priceJmd": null, "packSize": null, "halalEvidence": "unverified" },
+    { "id": "spice", "status": "concept", "availability": "unconfirmed", "priceJmd": null, "packSize": null, "halalEvidence": "unverified" }
+  ]
+}

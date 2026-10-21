@@ -84,3 +84,7 @@ COMM-02 evidence: native negative identity/scope/date tests, real SQLite grant/r
 ## A11Y-01 — Measured public contrast and keyboard gate
 
 Token-level WCAG AA normal-text colour ratios enforced in Node; 69 representative rendered-light-surface checks, mobile 44px navigation touch targets, focus, reduced motion and responsive review enforced by local Chromium. No relaxation of original security, content or merge gates.
+
+## SHOP-01 quality evidence
+
+A dependency-free Node policy guards prices, pack sizes, status and catalogue ID parity; the generated static public `/plan/` uses browser-local data with no checkout endpoints. Native regressions run with `npm run check`; a Chromium harness checks 1440, 768, 390 and 320px. Real preview smoke and accessibility review remain required prior to a public client update.

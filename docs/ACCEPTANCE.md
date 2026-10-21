@@ -122,3 +122,10 @@ Acceptance gates: token tests, measured Chromium text contrast (4.5:1), keyboard
 - Verify event-publication model and source audit reject missing approval, uncertain date/offset, private sources, duplicate IDs and reversed times. Expired events must not appear in upcoming results.
 - Verify four breakpoints through `browser-events-check.py`, including reset/feedback, no horizontal scroll or console errors. All previous native/SQLite/content-audit tests and exact-head GitHub CI must remain green.
 - Public client-review release, live submissions, halal certification and user identity features are strictly out of scope.
+
+## SHOP-01 candidate acceptance
+
+- `commerce/offers.json` must retain all five IDs, JMD schema, null prices/pack sizes and unconfirmed availability. Malformed or silently purchasable products fail `npm run check` via `tests/offer-policy.test.js`.
+- `/plan/` links from homepage and product pages only as a concept idea list, never a cart or checkout. Verify no network calls or personal information collection.
+- `python3 browser-plan-check.py` covers add/remove, 1-12 quantity, clear cancellation, unavailable clipboard, no errors and no mobile overflow across 1440/768/390/320.
+- Production, client review, Cloudflare flags and merging remain independently approved gates.
