@@ -154,3 +154,7 @@ Shared CSS readability tokens and narrow-mobile header fixes improve the public 
 ## EVENT-01: community events and Ramadan resource wayfinder
 
 `/events/` has a clear no-approved-events state, practical Ramadan/Eid links and a session-only preparation checklist. It displays only approved source-backed future events when these exist. Jamaica-local start/end times and editorial/source/organizer requirements are validated by `scripts/event-policy.mjs`. See `docs/EVENTS_RAMADAN_GUIDE.md` for the exact schema, separate human publication gate, religious/date boundaries, and mobile acceptance. Run `python3 browser-events-check.py`; the main `npm run check` gate includes model and source-audit regressions. No live event has been invented or submitted.
+
+## SHOP-01: prelaunch product idea planner
+
+The `/plan/` route lets Jamaican visitors collect illustrative Tayyib product concepts, adjust bounded idea quantities and copy their list. JMD pricing, pack sizes, stock, halal evidence and all checkout operations remain deliberately unavailable. See `docs/COMMERCE_CONCEPT_FOUNDATION.md` and run `npm run check` plus `python3 browser-plan-check.py`. This is not an ecommerce checkout.

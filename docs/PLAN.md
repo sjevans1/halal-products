@@ -243,3 +243,7 @@ Improve the legibility and reachability of labels, descriptions, product metadat
 - Done in separate development candidate: sourced events-only model with Jamaica UTC-05:00 local times, build and content audits, empty-state UX, optional in-session Ramadan checklist, and responsive resources. Existing approved events remain zero until original organizer evidence is independently reviewed.
 - UX acceptance: visitor can find community links and prepare without fake calendar dates; event filters appear only when sourced upcoming events are published; every event has organizer/source clarity. Original contribution workflow remains fail-closed.
 - Release gates: human review, actual Jamaican Muslim editorial feedback and accessibility review, approved organizer source and change-control release. Static client-review site is not automatically updated.
+
+## SHOP-01: concept planning before commercial activation
+
+Deliver source-governed JMD offer placeholders and a responsive personal idea-list journey on `/plan/`, with clear not-for-sale copy, quantity controls, locally stored ideas and manual-copy fallback. No API, orders, payments, identity, or inventory activation. A future SHOP-02 decision must require independently verified business/certification facts and a reviewed data model before enabling sale statuses.

@@ -1,0 +1,44 @@
+/* SHOP-01: premium concept planning, not a transactional shopping cart. */
+.plan-hero{background:linear-gradient(120deg,#123d2e,#255640);color:#fbf8eb;padding:86px 0 78px}
+.plan-hero .eyebrow{font-size:11px;color:#e7ce98;letter-spacing:.15em;font-weight:800}
+.plan-hero h1{font:400 clamp(44px,6vw,79px)/1.05 var(--serif);letter-spacing:-.035em;margin:17px 0;max-width:830px}
+.plan-hero h1 em{font-weight:400;color:#e3cf9f}
+.plan-hero p{font-size:16px;line-height:1.7;color:#e3eee4;max-width:650px}
+.plan-hero a{color:#f1dbaa;text-underline-offset:5px}
+.plan-shell{padding:68px 0 110px;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,.85fr);gap:48px;align-items:start}
+.plan-intro h2{font:400 clamp(33px,4vw,49px)/1.1 var(--serif);margin:0 0 12px}
+.plan-intro p{font-size:14px;line-height:1.8;color:#3d5346;max-width:650px}
+.plan-guidance{padding:16px 20px;background:#f2ece0;color:#4a4639;border-left:3px solid #987238;font-size:13px;line-height:1.7;margin:24px 0}
+.plan-cards{display:grid;gap:14px;margin-top:30px}
+.plan-product{background:#fff;border:1px solid #dcded4;display:flex;gap:24px;align-items:center;padding:18px;min-width:0}
+.plan-product-photo{flex:0 0 118px;background:#f2efe8;display:block;align-self:stretch;min-height:123px}
+.plan-product-photo img{width:100%;height:100%;max-height:150px;object-fit:contain}
+.plan-product-info{flex:1;min-width:0}.plan-product-info h3{font:400 27px/1.12 var(--serif);margin:8px 0}
+.plan-overline{font-size:10px;letter-spacing:.1em;font-weight:800;color:#70532f}
+.plan-product-note{font-size:12px;color:#465b4a;line-height:1.6;margin:0 0 14px}
+.plan-item-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.plan-add,.plan-step,.plan-remove,.plan-button{border:1px solid #1e5239;background:#1e5239;color:white;font-size:13px;font-weight:750;min-height:44px;padding:9px 17px;cursor:pointer;font-family:inherit}
+.plan-step{font-size:21px;line-height:1;min-width:44px;padding:0}
+.plan-remove{background:transparent;color:#245138;padding:9px 12px}
+.plan-add:hover,.plan-step:hover,.plan-button:hover{background:#0c3829}
+.plan-step:disabled,.plan-button:disabled{opacity:.55;cursor:not-allowed}
+.plan-quantity{font-weight:800;min-width:32px;text-align:center;font-size:15px;color:#213b2b}
+.plan-summary{background:#f0eee5;padding:30px;position:sticky;top:20px;border:1px solid #e0d9c7}
+.plan-summary .eyebrow{font-size:10px;color:#6e512b;font-weight:800;letter-spacing:.12em}
+.plan-summary h2{font:400 37px/1.1 var(--serif);margin:13px 0}.plan-summary p{font-size:13px;color:#47574b;line-height:1.75}
+.plan-list{margin:22px 0;padding-left:23px;color:#243e2d;line-height:2;font-size:13px}
+.plan-list:empty{list-style:none;padding:0}
+.plan-actions{display:flex;flex-direction:column;gap:11px;margin-top:16px}.plan-actions .plan-button{width:100%}.plan-actions .plan-clear{background:transparent;color:#204633}
+.plan-status{min-height:20px;font-size:12px;color:#28513b;line-height:1.5;margin-top:12px}
+.plan-fallback{width:100%;min-height:125px;background:#fff;border:1px solid #8f9f8f;padding:13px;font-family:inherit;font-size:12px;resize:vertical}
+.plan-privacy{font-size:11px!important;color:#4d5d50!important;padding-top:17px;border-top:1px solid #d3d5ca}
+.plan-link{color:#205238;text-decoration:underline;text-underline-offset:4px}
+.plan-shell button:focus-visible,.plan-shell a:focus-visible,.plan-hero a:focus-visible{outline:3px solid #b78a45;outline-offset:4px}
+@media(max-width:860px){.plan-shell{grid-template-columns:1fr;gap:30px}.plan-summary{position:static;order:-1}.plan-hero{padding:58px 0}}
+@media(max-width:480px){.plan-shell{padding-top:34px}.plan-product{gap:12px;padding:12px;align-items:flex-start}.plan-product-photo{flex-basis:90px;min-height:110px}.plan-product-info h3{font-size:23px}.plan-overline{font-size:9px}.plan-summary{padding:24px}.plan-item-controls{gap:6px}.plan-remove{padding:8px}.plan-hero h1{font-size:43px}}
+@media(prefers-reduced-motion:reduce){.plan-shell *{scroll-behavior:auto!important;transition:none!important}}
+/* Let the tallest side of each card define the row, including wrapped mobile controls. */
+.plan-product{display:grid;grid-template-columns:118px minmax(0,1fr);align-items:start}
+.plan-product-photo{grid-column:1;grid-row:1;min-width:0}
+.plan-product-info{grid-column:2;grid-row:1}
+@media(max-width:480px){.plan-product{grid-template-columns:90px minmax(0,1fr)}}
