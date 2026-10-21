@@ -237,3 +237,9 @@ No positive halal claim, certification, named business verification, product ava
 ## A11Y-01 — Readable Jamaica-first public UX
 
 Improve the legibility and reachability of labels, descriptions, product metadata, directory pages and mobile header actions before increasing feature complexity. Use real Jamaican mobile-user review before release.
+
+### EVENT-01: Jamaica events and Ramadan resource wayfinder
+
+- Done in separate development candidate: sourced events-only model with Jamaica UTC-05:00 local times, build and content audits, empty-state UX, optional in-session Ramadan checklist, and responsive resources. Existing approved events remain zero until original organizer evidence is independently reviewed.
+- UX acceptance: visitor can find community links and prepare without fake calendar dates; event filters appear only when sourced upcoming events are published; every event has organizer/source clarity. Original contribution workflow remains fail-closed.
+- Release gates: human review, actual Jamaican Muslim editorial feedback and accessibility review, approved organizer source and change-control release. Static client-review site is not automatically updated.
